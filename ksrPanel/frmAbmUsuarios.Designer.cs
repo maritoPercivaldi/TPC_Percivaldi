@@ -72,6 +72,7 @@
             this.Controls.Add(this.lblListaUsuarios);
             this.Name = "frmAbmUsuarios";
             this.Text = "frmAbmUsuarios";
+            this.Load += new System.EventHandler(this.frmAbmUsuarios_Load);
             this.Controls.SetChildIndex(this.lblListaUsuarios, 0);
             this.Controls.SetChildIndex(this.dgvUsuarios, 0);
             this.Controls.SetChildIndex(this.btnTestConn, 0);

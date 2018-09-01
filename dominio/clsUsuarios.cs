@@ -15,6 +15,11 @@ namespace dominio
         public int DeptoId { get; set; }
         public string Mail { get; set; }
 
+        public clsUsuarios()
+        {
+
+        }
+
         public clsUsuarios(int Id,string Nombre, string Apellido,string Secret, int DeptoId, string Mail)
         {
             this.Id = Id;

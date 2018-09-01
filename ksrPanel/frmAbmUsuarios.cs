@@ -25,14 +25,15 @@ namespace ksrPanel
         {
             InitializeComponent();
             this.Size = new System.Drawing.Size(1024, 1024);
-            clsBaseBusiness datos = new clsBaseBusiness();
-            string select = "select * from USUARIOS";
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(select,datos.CadenaConexion);
-            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
-            DataSet ds = new DataSet();
-            dataAdapter.Fill(ds);
-            dgvUsuarios.ReadOnly = true;
-            dgvUsuarios.DataSource = ds.Tables[0];
+            //clsBaseBusiness datos = new clsBaseBusiness();
+            //string select = "select * from USUARIOS";
+            //SqlDataAdapter dataAdapter = new SqlDataAdapter(select,datos.CadenaConexion);
+            //SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+            //DataSet ds = new DataSet();
+            //dataAdapter.Fill(ds);
+            //dgvUsuarios.ReadOnly = true;
+            //dgvUsuarios.DataSource = ds.Tables[0];
+            
             
 
 
@@ -74,6 +75,19 @@ namespace ksrPanel
             c.Close();
         }
 
-       
+        private void frmAbmUsuarios_Load(object sender, EventArgs e)
+        {
+            //creo un objeto nuevo de la clase negocio
+            UsuarioBusiness negocio = new UsuarioBusiness();
+            try
+            {
+                dgvUsuarios.DataSource = negocio.listar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
