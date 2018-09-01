@@ -16,17 +16,35 @@ namespace negocio
             SqlConnection conexion = new SqlConnection();
             SqlCommand comando = new SqlCommand();
             SqlDataReader lector;
-            clsUsuarios usuarios = new IList<usuarios>();
-
-
-            conexion.ConnectionString = @"Data Source=DESKTOP-5UAJG1S\SQLEXPRESS;Initial Catalog= ksrPanel ;Integrated Security=SSPI";
-            comando.CommandType = System.Data.CommandType.Text;
-            comando = "Select * from USUARIOS";
-            conexion.Open();
-            while(lector.Read())
+            IList<clsUsuarios> usuariosLista = new List<clsUsuarios>();
+            try
+            {
+                conexion.ConnectionString = @"Data Source=DESKTOP-5UAJG1S\SQLEXPRESS;Initial Catalog= ksrPanel ;Integrated Security=SSPI";
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "Select * from USUARIOS";
+                conexion.Open();
+                lector = comando.ExecuteReader();
+                while (lector.Read())
+                {
+                    clsUsuarios usuario = new clsUsuarios();
+                    usuario.Nombre = lector.GetString(1);
+                    usuario.Apellido = lector.GetString(2);
+                    usuario.Mail = lector.GetString(5);
+                    usuariosLista.Add(usuario);
+                    usuario = null;
+                }
+               
+            }
+            catch (Exception ex)
             {
 
+                throw ex;
             }
+            finally
+            {
+                conexion.Close();
+            }
+            
             
 
 
