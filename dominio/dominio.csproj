@@ -42,7 +42,9 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="clsUsuarios.cs" />
+    <Compile Include="Departamentos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidacionesLocas.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

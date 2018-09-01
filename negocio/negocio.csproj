@@ -43,6 +43,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="clsBaseBusiness.cs" />
     <Compile Include="clsFunciones.cs" />
+    <Compile Include="DepartamentoBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioBusiness.cs" />
   </ItemGroup>

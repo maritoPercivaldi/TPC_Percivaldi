@@ -25,55 +25,21 @@ namespace ksrPanel
         {
             InitializeComponent();
             this.Size = new System.Drawing.Size(1024, 1024);
-            //clsBaseBusiness datos = new clsBaseBusiness();
-            //string select = "select * from USUARIOS";
-            //SqlDataAdapter dataAdapter = new SqlDataAdapter(select,datos.CadenaConexion);
-            //SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
-            //DataSet ds = new DataSet();
-            //dataAdapter.Fill(ds);
-            //dgvUsuarios.ReadOnly = true;
-            //dgvUsuarios.DataSource = ds.Tables[0];
-            
-            
-
-
-
-
         }
 
-        private void btnTestConn_Click(object sender, EventArgs e)
-        {
-            //string connetionString = null;
-            //SqlConnection cnn;
-            //connetionString = @"Data Source=DESKTOP-5UAJG1S\SQLEXPRESS;Initial Catalog=ksrPanel;Integrated Security=SSPI";
-            //cnn = new SqlConnection(connetionString);
-            //try
-            //{
-            //    cnn.Open();
-            //    MessageBox.Show("Connection Open ! ");
-            //    cnn.Close();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Can not open connection ! " + ex.Message.ToString());
-            //}
-            llenar();
-            frmAbmUsuarios.ActiveForm.Refresh();
 
-        }
-
-        private void llenar()
-        {
-            string select = "select * from USUARIOS";
-            SqlConnection c = new SqlConnection(@"Data Source=DESKTOP-5UAJG1S\SQLEXPRESS;Initial Catalog=ksrPanel;Integrated Security=SSPI"); // Your Connection String here
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(select, c);
-            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
-            DataSet ds = new DataSet();
-            dataAdapter.Fill(ds);
-            dgvUsuarios.ReadOnly = true;
-            dgvUsuarios.DataSource = ds.Tables[0];
-            c.Close();
-        }
+        //private void llenar()
+        //{
+        //    string select = "select * from USUARIOS";
+        //    SqlConnection c = new SqlConnection(@"Data Source=DESKTOP-5UAJG1S\SQLEXPRESS;Initial Catalog=ksrPanel;Integrated Security=SSPI"); // Your Connection String here
+        //    SqlDataAdapter dataAdapter = new SqlDataAdapter(select, c);
+        //    SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+        //    DataSet ds = new DataSet();
+        //    dataAdapter.Fill(ds);
+        //    dgvUsuarios.ReadOnly = true;
+        //    dgvUsuarios.DataSource = ds.Tables[0];
+        //    c.Close();
+        //}
 
         private void frmAbmUsuarios_Load(object sender, EventArgs e)
         {
@@ -82,12 +48,23 @@ namespace ksrPanel
             try
             {
                 dgvUsuarios.DataSource = negocio.listar();
+                //dgvUsuarios.AutoResizeColumns();
+                dgvUsuarios.Columns[0].Visible = false;
+                dgvUsuarios.Columns[3].Visible = false;
+
+
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnAgregarUsuario_Click(object sender, EventArgs e)
+        {
+            frmAgregarUsuario frm = new frmAgregarUsuario();
+            frm.ShowDialog();
         }
     }
 }
