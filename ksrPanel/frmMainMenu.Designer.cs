@@ -67,19 +67,20 @@
             // comprasToolStripMenuItem
             // 
             this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
-            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(228, 30);
+            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.comprasToolStripMenuItem.Text = "Compras";
+            this.comprasToolStripMenuItem.Click += new System.EventHandler(this.comprasToolStripMenuItem_Click);
             // 
             // sistemasToolStripMenuItem
             // 
             this.sistemasToolStripMenuItem.Name = "sistemasToolStripMenuItem";
-            this.sistemasToolStripMenuItem.Size = new System.Drawing.Size(228, 30);
+            this.sistemasToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.sistemasToolStripMenuItem.Text = "Sistemas";
             // 
             // notasDePedidoToolStripMenuItem
             // 
             this.notasDePedidoToolStripMenuItem.Name = "notasDePedidoToolStripMenuItem";
-            this.notasDePedidoToolStripMenuItem.Size = new System.Drawing.Size(228, 30);
+            this.notasDePedidoToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.notasDePedidoToolStripMenuItem.Text = "Notas de Pedido";
             // 
             // vehiculosToolStripMenuItem
@@ -94,13 +95,13 @@
             // aBMToolStripMenuItem
             // 
             this.aBMToolStripMenuItem.Name = "aBMToolStripMenuItem";
-            this.aBMToolStripMenuItem.Size = new System.Drawing.Size(166, 30);
+            this.aBMToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.aBMToolStripMenuItem.Text = "ABM";
             // 
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(166, 30);
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.reportesToolStripMenuItem.Text = "Reportes";
             // 
             // usuariosToolStripMenuItem

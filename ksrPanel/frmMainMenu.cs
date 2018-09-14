@@ -26,5 +26,11 @@ namespace ksrPanel
             frmAbmUsuarios form = new frmAbmUsuarios();
             form.ShowDialog();
         }
+
+        private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCompras form = new frmCompras();
+            form.ShowDialog();
+        }
     }
 }
