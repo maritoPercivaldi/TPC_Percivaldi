@@ -22,7 +22,7 @@ namespace negocio
             IList<Departamentos> lista = new List<Departamentos>();
             try
             {
-                conexion.ConnectionString = @"Data Source=DESKTOP-5UAJG1S\SQLEXPRESS;Initial Catalog= ksrPanel ;Integrated Security=SSPI";
+                conexion.ConnectionString = @"Data Source=DESKTOP-5UAJG1S\SQLEXPRESS;Initial Catalog= PERCIVALDI_DB ;Integrated Security=SSPI";
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "select * from DEPARTAMENTOS";
                 comando.Connection = conexion;

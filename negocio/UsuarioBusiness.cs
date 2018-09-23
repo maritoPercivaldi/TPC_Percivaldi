@@ -22,7 +22,7 @@ namespace negocio
             IList<clsUsuarios> usuariosLista = new List<clsUsuarios>();
             try
             {
-                conexion.ConnectionString = @"Data Source=DESKTOP-5UAJG1S\SQLEXPRESS;Initial Catalog= ksrPanel ;Integrated Security=SSPI";
+                conexion.ConnectionString = @"Data Source=DESKTOP-5UAJG1S\SQLEXPRESS;Initial Catalog= PERCIVALDI_DB ;Integrated Security=SSPI";
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "Select * from USUARIOS";
                 comando.Connection = conexion;
