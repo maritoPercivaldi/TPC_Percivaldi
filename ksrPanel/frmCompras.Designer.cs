@@ -60,7 +60,7 @@
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(133, 58);
             this.btnEditar.TabIndex = 3;
-            this.btnEditar.Text = "Editar";
+            this.btnEditar.Text = "Follow Up";
             this.btnEditar.UseVisualStyleBackColor = true;
             // 
             // btnNuevoReq
@@ -71,6 +71,7 @@
             this.btnNuevoReq.TabIndex = 4;
             this.btnNuevoReq.Text = "Nuevo";
             this.btnNuevoReq.UseVisualStyleBackColor = true;
+            this.btnNuevoReq.Click += new System.EventHandler(this.btnNuevoReq_Click);
             // 
             // frmCompras
             // 

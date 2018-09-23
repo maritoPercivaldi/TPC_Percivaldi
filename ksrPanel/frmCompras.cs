@@ -17,5 +17,11 @@ namespace ksrPanel
             InitializeComponent();
             this.Size = new System.Drawing.Size(1024, 1024);
         }
+
+        private void btnNuevoReq_Click(object sender, EventArgs e)
+        {
+            frmNuevoRequerimientoCompra form = new frmNuevoRequerimientoCompra();
+            form.ShowDialog();
+        }
     }
 }

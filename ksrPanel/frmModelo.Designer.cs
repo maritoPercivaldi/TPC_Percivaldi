@@ -35,8 +35,9 @@
             // 
             // pbKaeser
             // 
+            this.pbKaeser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pbKaeser.Image = global::ksrPanel.Properties.Resources.kaeser;
-            this.pbKaeser.Location = new System.Drawing.Point(826, 898);
+            this.pbKaeser.Location = new System.Drawing.Point(12, 12);
             this.pbKaeser.Name = "pbKaeser";
             this.pbKaeser.Size = new System.Drawing.Size(160, 54);
             this.pbKaeser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -66,5 +67,8 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pbKaeser;
+        public void cambiarUbicacionLogo(int alto, int ancho) {
+            pbKaeser.Location = new System.Drawing.Point(ancho, alto);
+        }
     }
 }
