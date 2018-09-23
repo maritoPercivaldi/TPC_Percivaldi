@@ -15,12 +15,19 @@ namespace ksrPanel
         public Form1()
         {
             InitializeComponent();
+            this.Size = new System.Drawing.Size(800, 800);
+            cambiarUbicacionLogo(680, 600);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             frmMainMenu form = new frmMainMenu();
             form.ShowDialog();
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
         }
     }

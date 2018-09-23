@@ -18,8 +18,8 @@ namespace ksrPanel
         {
             InitializeComponent();
             
-            this.Size = new System.Drawing.Size(1024, 800);
-            cambiarUbicacionLogo(800, 800);
+            this.Size = new System.Drawing.Size(1024, 1024);
+            cambiarUbicacionLogo(904, 824);
             
         }
 

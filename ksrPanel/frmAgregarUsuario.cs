@@ -18,6 +18,7 @@ namespace ksrPanel
         {
             InitializeComponent();
             this.Size = new System.Drawing.Size(800, 800);
+            cambiarUbicacionLogo(680, 600);
 
         }
 
