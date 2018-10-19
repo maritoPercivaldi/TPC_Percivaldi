@@ -124,6 +124,7 @@
             // 
             this.tbPass.Location = new System.Drawing.Point(23, 327);
             this.tbPass.Name = "tbPass";
+            this.tbPass.PasswordChar = '*';
             this.tbPass.Size = new System.Drawing.Size(291, 32);
             this.tbPass.TabIndex = 10;
             // 
@@ -138,17 +139,18 @@
             // 
             // btnProbarMail
             // 
-            this.btnProbarMail.Location = new System.Drawing.Point(89, 440);
+            this.btnProbarMail.Location = new System.Drawing.Point(12, 440);
             this.btnProbarMail.Name = "btnProbarMail";
             this.btnProbarMail.Size = new System.Drawing.Size(135, 83);
             this.btnProbarMail.TabIndex = 12;
             this.btnProbarMail.Text = "probarmail";
             this.btnProbarMail.UseVisualStyleBackColor = true;
+            this.btnProbarMail.Visible = false;
             this.btnProbarMail.Click += new System.EventHandler(this.btnProbarMail_Click);
             // 
             // btnAceptarAltaUsuario
             // 
-            this.btnAceptarAltaUsuario.Location = new System.Drawing.Point(257, 440);
+            this.btnAceptarAltaUsuario.Location = new System.Drawing.Point(186, 440);
             this.btnAceptarAltaUsuario.Name = "btnAceptarAltaUsuario";
             this.btnAceptarAltaUsuario.Size = new System.Drawing.Size(128, 83);
             this.btnAceptarAltaUsuario.TabIndex = 13;
@@ -158,7 +160,7 @@
             // 
             // btnCancelarAltaUsuario
             // 
-            this.btnCancelarAltaUsuario.Location = new System.Drawing.Point(391, 440);
+            this.btnCancelarAltaUsuario.Location = new System.Drawing.Point(344, 440);
             this.btnCancelarAltaUsuario.Name = "btnCancelarAltaUsuario";
             this.btnCancelarAltaUsuario.Size = new System.Drawing.Size(128, 83);
             this.btnCancelarAltaUsuario.TabIndex = 14;

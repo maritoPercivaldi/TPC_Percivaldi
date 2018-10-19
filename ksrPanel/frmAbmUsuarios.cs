@@ -21,6 +21,7 @@ namespace ksrPanel
 {
     public partial class frmAbmUsuarios : ksrPanel.frmModelo
     {
+        private List<clsUsuarios> listaUsuarios;
         public frmAbmUsuarios()
         {
             InitializeComponent();
@@ -53,9 +54,10 @@ namespace ksrPanel
             UsuarioBusiness negocio = new UsuarioBusiness();
             try
             {
-                dgvUsuarios.DataSource = negocio.listar();
+                listaUsuarios = (List<clsUsuarios>)negocio.listar();
+                dgvUsuarios.DataSource = listaUsuarios;
                 //dgvUsuarios.AutoResizeColumns();
-                //dgvUsuarios.Columns[0].Visible = false;
+                dgvUsuarios.Columns[0].Visible = false;
                 dgvUsuarios.Columns[3].Visible = false;
 
 
@@ -108,6 +110,20 @@ namespace ksrPanel
             {
 
                 MessageBox.Show(ex.ToString(), "Error al eliminar el usuario");
+            }
+        }
+
+        private void tbBuscarUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (tbBuscarUsuario.Text == "")
+            {
+                dgvUsuarios.DataSource = listaUsuarios;
+            }
+            else
+            {
+                List<clsUsuarios> lista;
+                lista = listaUsuarios.FindAll(PEPE => PEPE.Apellido.Contains(tbBuscarUsuario.Text));
+                dgvUsuarios.DataSource = lista;
             }
         }
     }

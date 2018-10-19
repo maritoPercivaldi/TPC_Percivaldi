@@ -142,7 +142,7 @@ namespace ksrPanel
                     return;
                 }
                 usuario.DeptoId = cbSector.SelectedIndex;
-                if(usuario.Id != 0)
+                if(usuario.Id != 0) //si es distinto de cero es porque trae un id cargado en el usuario
                 {
                     usuarioNegocio.modificarUsuario(usuario);
                     MessageBox.Show("Usuario Modificado correctamente", "Modificacion Exitosa");

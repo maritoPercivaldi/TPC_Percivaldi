@@ -105,12 +105,12 @@ namespace negocio
             try
             {
                 conexion = new AccesoDatos();
-                conexion.setearConsulta("update USUARIO set NOMBRE = @Nombre, APELLIDO = @Apellido, ACCESS = @Access, DEPIP = @DepId, MAIL = @Mail where ID = @Id");
+                conexion.setearConsulta("update USUARIOS set NOMBRE = @Nombre, APELLIDO = @Apellido, ACCESS = @Access, DEPID = @DepId, MAIL = @Mail where ID = @Id");
                 conexion.Comando.Parameters.Clear();
                 conexion.Comando.Parameters.AddWithValue("@Apellido", usuario.Apellido);
                 conexion.Comando.Parameters.AddWithValue("@Nombre", usuario.Nombre);
                 conexion.Comando.Parameters.AddWithValue("@Access", usuario.Secret);
-                conexion.Comando.Parameters.AddWithValue("@ADepId", usuario.DeptoId+1);
+                conexion.Comando.Parameters.AddWithValue("@DepId", usuario.DeptoId+1);
                 conexion.Comando.Parameters.AddWithValue("@Mail", usuario.Mail);
                 conexion.Comando.Parameters.AddWithValue("@Id", usuario.Id);
 

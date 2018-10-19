@@ -67,7 +67,8 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pbKaeser;
-        public void cambiarUbicacionLogo(int alto, int ancho) {
+        public void cambiarUbicacionLogo(int alto, int ancho)
+        {
             pbKaeser.Location = new System.Drawing.Point(ancho, alto);
         }
     }
