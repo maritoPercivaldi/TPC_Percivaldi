@@ -27,6 +27,7 @@ namespace ksrPanel
             InitializeComponent();
             this.Size = new System.Drawing.Size(1024, 1024);
             cambiarUbicacionLogo(904, 824);
+            
         }
 
 
@@ -59,6 +60,8 @@ namespace ksrPanel
                 //dgvUsuarios.AutoResizeColumns();
                 dgvUsuarios.Columns[0].Visible = false;
                 dgvUsuarios.Columns[3].Visible = false;
+                //limpiar el casillero de busqueda
+                tbBuscarUsuario.Clear();
 
 
             }
@@ -122,9 +125,18 @@ namespace ksrPanel
             else
             {
                 List<clsUsuarios> lista;
-                lista = listaUsuarios.FindAll(PEPE => PEPE.Apellido.Contains(tbBuscarUsuario.Text));
+                //ALTA MAGIA TIRE PARA QUE NO SEA CASE SENSITIVE.
+                lista = listaUsuarios.FindAll(AUXILIAR => AUXILIAR.Apellido.ToLower().Contains(tbBuscarUsuario.Text.ToLower()));
                 dgvUsuarios.DataSource = lista;
             }
+        }
+
+        private void tbBuscarUsuario_MouseHover(object sender, EventArgs e)
+        {
+            //magia para que cuando hover con el mouse por el textbox te chifla cual es el campo de busqueda
+            int VisibleTime = 1000; 
+            ToolTip tt = new ToolTip();
+            tt.Show("La busqueda se realiza sobre los Apellidos", tbBuscarUsuario, 0, 0, VisibleTime);
         }
     }
 }

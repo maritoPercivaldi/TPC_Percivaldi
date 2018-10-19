@@ -96,6 +96,7 @@
             this.tbBuscarUsuario.Size = new System.Drawing.Size(295, 32);
             this.tbBuscarUsuario.TabIndex = 6;
             this.tbBuscarUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbBuscarUsuario_KeyPress);
+            this.tbBuscarUsuario.MouseHover += new System.EventHandler(this.tbBuscarUsuario_MouseHover);
             // 
             // lblBuscar
             // 
