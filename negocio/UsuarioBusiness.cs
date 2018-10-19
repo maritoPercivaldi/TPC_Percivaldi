@@ -7,6 +7,7 @@ using dominio;
 using System.Data.SqlClient;
 
 
+
 namespace negocio
 {
     public class UsuarioBusiness
@@ -55,5 +56,45 @@ namespace negocio
 
 
         }
+
+        public void altaUsuario(clsUsuarios nuevo)
+        {
+            //instancio un objeto de la clase acceso a datos y lo nuleo
+            AccesoDatos conexion = null;
+            try
+            {
+                //le asigno con el constructor el string de conexion;
+                conexion = new AccesoDatos();
+                //le asigno la consulta con el metodo setearConsulta
+                conexion.setearConsulta("insert into USUARIOS (NOMBRE,APELLIDO,ACCESS,DEPID,MAIL) values (@Nombre,@Apellido,@Access,@DepId,@Mail)");
+                //conexion.setearConsulta("insert into USUARIOS (NOMBRE,APELLIDO,ACCESS,DEPID,MAIL) values ('" + nuevo.Nombre +"','"+nuevo.Apellido+"','"+nuevo.Secret+"',"+nuevo.DeptoId+",'"+nuevo.Mail+"')");
+                //blanqueo los datos existentes en las variables de las consultas.
+                conexion.Comando.Parameters.Clear();
+                //aca cargo los parametros con las variables
+                conexion.Comando.Parameters.AddWithValue("@Nombre", nuevo.Nombre);
+                conexion.Comando.Parameters.AddWithValue("@Apellido", nuevo.Apellido);
+                conexion.Comando.Parameters.AddWithValue("@Access", nuevo.Secret);
+                conexion.Comando.Parameters.AddWithValue("@DepId", nuevo.DeptoId+1);
+                conexion.Comando.Parameters.AddWithValue("@Mail", nuevo.Mail);
+
+                //abrir la conexion y ejecutar
+                conexion.abrirConexion();
+                conexion.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                if (conexion != null)
+                {
+                    conexion.cerrarConexion();
+                }
+            }
+        }
     }
+
+   
 }

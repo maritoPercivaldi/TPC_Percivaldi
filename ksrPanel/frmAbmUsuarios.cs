@@ -44,6 +44,11 @@ namespace ksrPanel
 
         private void frmAbmUsuarios_Load(object sender, EventArgs e)
         {
+            cargar();
+        }
+
+        private void cargar()
+        {
             //creo un objeto nuevo de la clase negocio
             UsuarioBusiness negocio = new UsuarioBusiness();
             try
@@ -66,6 +71,7 @@ namespace ksrPanel
         {
             frmAgregarUsuario frm = new frmAgregarUsuario();
             frm.ShowDialog();
+            cargar();
         }
     }
 }

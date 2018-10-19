@@ -14,6 +14,7 @@ namespace ksrPanel
 {
     public partial class frmAgregarUsuario : ksrPanel.frmModelo
     {
+        private clsUsuarios usuario = null;
         public frmAgregarUsuario()
         {
             InitializeComponent();
@@ -57,6 +58,38 @@ namespace ksrPanel
             {
 
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnAceptarAltaUsuario_Click(object sender, EventArgs e)
+        {
+            UsuarioBusiness usuarioNegocio = new UsuarioBusiness();
+            try
+            {
+                if (usuario == null)
+                {
+                    usuario = new clsUsuarios();
+                }
+                if()
+                usuario.Apellido = tbApellido.Text;
+                usuario.Nombre = tbNombre.Text;
+                usuario.Secret = tbPass.Text;
+                usuario.Mail = tbMail.Text;
+                usuario.DeptoId = cbSector.SelectedIndex;
+                //inserto el nuevo usuario en la base.
+                usuarioNegocio.altaUsuario(usuario);
+                //largo un cartel diciendo que estuvo ok.
+                MessageBox.Show("Agregado Correctamente.");
+                Close();
+                
+
+                
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
             }
         }
     }

@@ -40,6 +40,8 @@
             this.tbPass = new System.Windows.Forms.TextBox();
             this.cbSector = new System.Windows.Forms.ComboBox();
             this.btnProbarMail = new System.Windows.Forms.Button();
+            this.btnAceptarAltaUsuario = new System.Windows.Forms.Button();
+            this.btnCancelarAltaUsuario = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblAgregarUsuarioTitulo
@@ -144,11 +146,32 @@
             this.btnProbarMail.UseVisualStyleBackColor = true;
             this.btnProbarMail.Click += new System.EventHandler(this.btnProbarMail_Click);
             // 
+            // btnAceptarAltaUsuario
+            // 
+            this.btnAceptarAltaUsuario.Location = new System.Drawing.Point(257, 440);
+            this.btnAceptarAltaUsuario.Name = "btnAceptarAltaUsuario";
+            this.btnAceptarAltaUsuario.Size = new System.Drawing.Size(128, 83);
+            this.btnAceptarAltaUsuario.TabIndex = 13;
+            this.btnAceptarAltaUsuario.Text = "Aceptar";
+            this.btnAceptarAltaUsuario.UseVisualStyleBackColor = true;
+            this.btnAceptarAltaUsuario.Click += new System.EventHandler(this.btnAceptarAltaUsuario_Click);
+            // 
+            // btnCancelarAltaUsuario
+            // 
+            this.btnCancelarAltaUsuario.Location = new System.Drawing.Point(391, 440);
+            this.btnCancelarAltaUsuario.Name = "btnCancelarAltaUsuario";
+            this.btnCancelarAltaUsuario.Size = new System.Drawing.Size(128, 83);
+            this.btnCancelarAltaUsuario.TabIndex = 14;
+            this.btnCancelarAltaUsuario.Text = "Cancelar";
+            this.btnCancelarAltaUsuario.UseVisualStyleBackColor = true;
+            // 
             // frmAgregarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(774, 740);
+            this.Controls.Add(this.btnCancelarAltaUsuario);
+            this.Controls.Add(this.btnAceptarAltaUsuario);
             this.Controls.Add(this.btnProbarMail);
             this.Controls.Add(this.cbSector);
             this.Controls.Add(this.tbPass);
@@ -176,6 +199,8 @@
             this.Controls.SetChildIndex(this.tbPass, 0);
             this.Controls.SetChildIndex(this.cbSector, 0);
             this.Controls.SetChildIndex(this.btnProbarMail, 0);
+            this.Controls.SetChildIndex(this.btnAceptarAltaUsuario, 0);
+            this.Controls.SetChildIndex(this.btnCancelarAltaUsuario, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,5 +220,7 @@
         private System.Windows.Forms.TextBox tbPass;
         private System.Windows.Forms.ComboBox cbSector;
         private System.Windows.Forms.Button btnProbarMail;
+        private System.Windows.Forms.Button btnAceptarAltaUsuario;
+        private System.Windows.Forms.Button btnCancelarAltaUsuario;
     }
 }
