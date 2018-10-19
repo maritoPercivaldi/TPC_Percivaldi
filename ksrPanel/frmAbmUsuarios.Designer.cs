@@ -32,6 +32,7 @@
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.btnAgregarUsuario = new System.Windows.Forms.Button();
             this.btnEditarUsuario = new System.Windows.Forms.Button();
+            this.btnEliminarUsuario = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +59,7 @@
             this.btnAgregarUsuario.AutoSize = true;
             this.btnAgregarUsuario.Location = new System.Drawing.Point(640, 41);
             this.btnAgregarUsuario.Name = "btnAgregarUsuario";
-            this.btnAgregarUsuario.Size = new System.Drawing.Size(144, 58);
+            this.btnAgregarUsuario.Size = new System.Drawing.Size(159, 58);
             this.btnAgregarUsuario.TabIndex = 3;
             this.btnAgregarUsuario.Text = "Nuevo Usuario";
             this.btnAgregarUsuario.UseVisualStyleBackColor = true;
@@ -69,16 +70,29 @@
             this.btnEditarUsuario.AutoSize = true;
             this.btnEditarUsuario.Location = new System.Drawing.Point(639, 105);
             this.btnEditarUsuario.Name = "btnEditarUsuario";
-            this.btnEditarUsuario.Size = new System.Drawing.Size(145, 58);
+            this.btnEditarUsuario.Size = new System.Drawing.Size(160, 58);
             this.btnEditarUsuario.TabIndex = 4;
             this.btnEditarUsuario.Text = "Editar Usuario";
             this.btnEditarUsuario.UseVisualStyleBackColor = true;
+            this.btnEditarUsuario.Click += new System.EventHandler(this.btnEditarUsuario_Click);
+            // 
+            // btnEliminarUsuario
+            // 
+            this.btnEliminarUsuario.AutoSize = true;
+            this.btnEliminarUsuario.Location = new System.Drawing.Point(640, 169);
+            this.btnEliminarUsuario.Name = "btnEliminarUsuario";
+            this.btnEliminarUsuario.Size = new System.Drawing.Size(159, 58);
+            this.btnEliminarUsuario.TabIndex = 5;
+            this.btnEliminarUsuario.Text = "Eliminar Usuario";
+            this.btnEliminarUsuario.UseVisualStyleBackColor = true;
+            this.btnEliminarUsuario.Click += new System.EventHandler(this.btnEliminarUsuario_Click);
             // 
             // frmAbmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(998, 964);
+            this.Controls.Add(this.btnEliminarUsuario);
             this.Controls.Add(this.btnEditarUsuario);
             this.Controls.Add(this.btnAgregarUsuario);
             this.Controls.Add(this.dgvUsuarios);
@@ -90,6 +104,7 @@
             this.Controls.SetChildIndex(this.dgvUsuarios, 0);
             this.Controls.SetChildIndex(this.btnAgregarUsuario, 0);
             this.Controls.SetChildIndex(this.btnEditarUsuario, 0);
+            this.Controls.SetChildIndex(this.btnEliminarUsuario, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -102,5 +117,6 @@
         private System.Windows.Forms.DataGridView dgvUsuarios;
         private System.Windows.Forms.Button btnAgregarUsuario;
         private System.Windows.Forms.Button btnEditarUsuario;
+        private System.Windows.Forms.Button btnEliminarUsuario;
     }
 }

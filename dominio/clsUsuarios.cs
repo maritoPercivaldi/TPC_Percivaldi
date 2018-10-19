@@ -14,13 +14,14 @@ namespace dominio
         public string Secret { get; set; }
         public int DeptoId { get; set; }
         public string Mail { get; set; }
+        public int Activo { get; set; }
 
         public clsUsuarios()
         {
 
         }
 
-        public clsUsuarios(int Id,string Nombre, string Apellido,string Secret, int DeptoId, string Mail)
+        public clsUsuarios(int Id,string Nombre, string Apellido,string Secret, int DeptoId, string Mail,int Activo)
         {
             this.Id = Id;
             this.Nombre = Nombre;
@@ -28,6 +29,7 @@ namespace dominio
             this.Secret = Secret;
             this.DeptoId = DeptoId;
             this.Mail = Mail;
+            this.Activo = Activo;
         }
     }
 }

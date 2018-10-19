@@ -164,6 +164,7 @@
             this.btnCancelarAltaUsuario.TabIndex = 14;
             this.btnCancelarAltaUsuario.Text = "Cancelar";
             this.btnCancelarAltaUsuario.UseVisualStyleBackColor = true;
+            this.btnCancelarAltaUsuario.Click += new System.EventHandler(this.btnCancelarAltaUsuario_Click);
             // 
             // frmAgregarUsuario
             // 

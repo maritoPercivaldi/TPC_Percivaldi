@@ -55,7 +55,7 @@ namespace ksrPanel
             {
                 dgvUsuarios.DataSource = negocio.listar();
                 //dgvUsuarios.AutoResizeColumns();
-                dgvUsuarios.Columns[0].Visible = false;
+                //dgvUsuarios.Columns[0].Visible = false;
                 dgvUsuarios.Columns[3].Visible = false;
 
 
@@ -72,6 +72,43 @@ namespace ksrPanel
             frmAgregarUsuario frm = new frmAgregarUsuario();
             frm.ShowDialog();
             cargar();
+        }
+
+        private void btnEditarUsuario_Click(object sender, EventArgs e)
+        {
+            clsUsuarios modificado;
+            try
+            {
+                //al objeto usuario lo instancio con los valores del usuario elegido
+                modificado = (clsUsuarios)dgvUsuarios.CurrentRow.DataBoundItem;
+                //instancio el formulario
+                frmAgregarUsuario modificar = new frmAgregarUsuario(modificado);
+                modificar.ShowDialog();
+                cargar();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString(), "error!");
+            }
+
+        }
+
+        private void btnEliminarUsuario_Click(object sender, EventArgs e)
+        {
+            UsuarioBusiness negocio = new UsuarioBusiness();
+            try
+            {
+                negocio.eliminarLogico((int)dgvUsuarios.CurrentRow.Cells[0].Value);
+                MessageBox.Show("Usuario Eliminado Exitosamente", "Baja Logica");
+                cargar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString(), "Error al eliminar el usuario");
+            }
         }
     }
 }
