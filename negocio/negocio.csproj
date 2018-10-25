@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
     <Compile Include="clsBaseBusiness.cs" />
-    <Compile Include="clsFunciones.cs" />
     <Compile Include="DepartamentoBusiness.cs" />
     <Compile Include="Negocios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
