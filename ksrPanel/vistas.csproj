@@ -57,6 +57,12 @@
     <Compile Include="frmAbmUsuarios.Designer.cs">
       <DependentUpon>frmAbmUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAbmVehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbmVehiculos.Designer.cs">
+      <DependentUpon>frmAbmVehiculos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAgregarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,12 @@
     </Compile>
     <Compile Include="frmCompras.Designer.cs">
       <DependentUpon>frmCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionVehiculo.Designer.cs">
+      <DependentUpon>frmGestionVehiculo.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMainMenu.cs">
       <SubType>Form</SubType>
@@ -95,11 +107,17 @@
     <EmbeddedResource Include="frmAbmUsuarios.resx">
       <DependentUpon>frmAbmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAbmVehiculos.resx">
+      <DependentUpon>frmAbmVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarUsuario.resx">
       <DependentUpon>frmAgregarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCompras.resx">
       <DependentUpon>frmCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionVehiculo.resx">
+      <DependentUpon>frmGestionVehiculo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMainMenu.resx">
       <DependentUpon>frmMainMenu.cs</DependentUpon>

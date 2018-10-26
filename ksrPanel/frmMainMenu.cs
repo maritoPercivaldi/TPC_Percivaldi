@@ -33,5 +33,11 @@ namespace ksrPanel
             frmCompras form = new frmCompras();
             form.ShowDialog();
         }
+
+        private void aBMToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAbmVehiculos form = new frmAbmVehiculos();
+            form.ShowDialog();
+        }
     }
 }

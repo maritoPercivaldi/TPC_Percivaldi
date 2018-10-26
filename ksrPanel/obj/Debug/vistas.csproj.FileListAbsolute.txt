@@ -38,3 +38,5 @@ C:\Users\Mario Percivaldi\Documents\Proyectos\TPC_Percivaldi\ksrPanel\obj\Debug\
 C:\Users\Mario Percivaldi\Documents\Proyectos\TPC_Percivaldi\ksrPanel\obj\Debug\ksrPanel.exe
 C:\Users\Mario Percivaldi\Documents\Proyectos\TPC_Percivaldi\ksrPanel\obj\Debug\ksrPanel.pdb
 C:\Users\Mario Percivaldi\Documents\Proyectos\TPC_Percivaldi\ksrPanel\obj\Debug\ksrPanel.frmNuevoRequerimientoCompra.resources
+C:\Users\Mario Percivaldi\Documents\Proyectos\TPC_Percivaldi\ksrPanel\obj\Debug\ksrPanel.frmAbmVehiculos.resources
+C:\Users\Mario Percivaldi\Documents\Proyectos\TPC_Percivaldi\ksrPanel\obj\Debug\ksrPanel.frmGestionVehiculo.resources

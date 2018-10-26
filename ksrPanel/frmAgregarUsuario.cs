@@ -22,7 +22,7 @@ namespace ksrPanel
             cambiarUbicacionLogo(680, 600);
 
         }
-
+        //constructor que recibe el usuario por parametro
         public frmAgregarUsuario(clsUsuarios modificado)
         {
             InitializeComponent();

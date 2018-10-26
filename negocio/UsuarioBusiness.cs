@@ -61,6 +61,74 @@ namespace negocio
 
         }
 
+        public clsUsuarios cargarData(int IdConductor)
+        {
+            AccesoDatos conexion = new AccesoDatos();
+            clsUsuarios aux = new clsUsuarios();
+            try
+            {
+                conexion.setearConsulta("select Apellido, Nombre,Id from USUARIOS where Id = @Valor");
+                conexion.Comando.Parameters.Clear();
+                conexion.Comando.Parameters.AddWithValue("@Valor", IdConductor);
+                conexion.abrirConexion();
+                conexion.ejecutarConsulta();
+                while (conexion.Lector.Read())
+                {
+                    aux = new clsUsuarios();
+                    aux.Id = conexion.Lector.GetInt32(2);
+                    aux.Apellido = conexion.Lector.GetString(0);
+                    aux.Nombre = conexion.Lector.GetString(1);
+                }
+                return aux;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conexion != null)
+                {
+                    conexion.cerrarConexion();
+                }
+            }
+
+
+        }
+
+        public List<clsUsuarios> listarApenom()
+        {
+            AccesoDatos conexion = null;
+            List<clsUsuarios> lista = new List<clsUsuarios>();
+            clsUsuarios aux;
+            try
+            {
+                conexion = new AccesoDatos();
+                conexion.setearConsulta("select Id,Apellido,Nombre from USUARIOS where activo = 1");
+                conexion.abrirConexion();
+                conexion.ejecutarConsulta();
+                while(conexion.Lector.Read())
+                {
+                    aux = new clsUsuarios(conexion.Lector.GetInt32(0),conexion.Lector.GetString(1),conexion.Lector.GetString(2));
+                    lista.Add(aux);
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                if(conexion != null)
+                {
+                    conexion.cerrarConexion();
+                }
+            }
+
+        }
+
         public void altaUsuario(clsUsuarios nuevo)
         {
             //instancio un objeto de la clase acceso a datos y lo nuleo

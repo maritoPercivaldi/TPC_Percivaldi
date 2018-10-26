@@ -11,12 +11,6 @@ using System.Data.SqlClient;
 using negocio;
 using dominio;
 
-
-
-
-
-
-
 namespace ksrPanel
 {
     public partial class frmAbmUsuarios : ksrPanel.frmModelo

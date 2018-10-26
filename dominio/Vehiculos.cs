@@ -28,10 +28,18 @@ namespace dominio
         public clsUsuarios Conductor { get; set; }
         //estado si esta activo o no.
         public int Estado { get; set; }
+        
 
         public override string ToString()
         {
             return Chapa + "-" + Marca;
+        }
+
+        public Vehiculos()
+        {
+            clsUsuarios conductor = new clsUsuarios();
+            
+
         }
 
     }
