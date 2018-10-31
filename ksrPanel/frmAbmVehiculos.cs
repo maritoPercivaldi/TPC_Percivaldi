@@ -62,13 +62,16 @@ namespace ksrPanel
             Vehiculos modificado;
             clsUsuarios conductormodificado = new clsUsuarios();
             UsuarioBusiness conductorBusines = new UsuarioBusiness();
+            VehiculoBusiness vehiculoBusiness = new VehiculoBusiness();
             try
             {
                 modificado = (Vehiculos)dgvVehiculos.CurrentRow.DataBoundItem;
-                conductormodificado = conductorBusines.cargarData(modificado.Conductor.Id);
-                modificado.Conductor.Id = conductormodificado.Id;
-                modificado.Conductor.Nombre = conductormodificado.Nombre;
-                modificado.Conductor.Apellido = conductormodificado.Apellido;
+                modificado.Conductor = (clsUsuarios)conductorBusines.cargarData((int)vehiculoBusiness.traerConductor(modificado.Chapa));
+
+                //conductormodificado = conductorBusines.cargarData(modificado.Conductor.Id);
+                //modificado.Conductor.Id = conductormodificado.Id;
+                //modificado.Conductor.Nombre = conductormodificado.Nombre;
+                //modificado.Conductor.Apellido = conductormodificado.Apellido;
                 //le paso al constructor del formulario el objeto
                 frmGestionVehiculo modificar = new frmGestionVehiculo(modificado);
                 modificar.ShowDialog();

@@ -67,7 +67,7 @@ namespace negocio
             clsUsuarios aux = new clsUsuarios();
             try
             {
-                conexion.setearConsulta("select Apellido, Nombre,Id from USUARIOS where Id = @Valor");
+                conexion.setearConsulta("select Id, Nombre, Apellido, Access, Depid, Mail,Activo from USUARIOS where Id = @Valor");
                 conexion.Comando.Parameters.Clear();
                 conexion.Comando.Parameters.AddWithValue("@Valor", IdConductor);
                 conexion.abrirConexion();
@@ -75,9 +75,13 @@ namespace negocio
                 while (conexion.Lector.Read())
                 {
                     aux = new clsUsuarios();
-                    aux.Id = conexion.Lector.GetInt32(2);
-                    aux.Apellido = conexion.Lector.GetString(0);
+                    aux.Id = conexion.Lector.GetInt32(0);
                     aux.Nombre = conexion.Lector.GetString(1);
+                    aux.Apellido = conexion.Lector.GetString(2);
+                    aux.Secret = conexion.Lector.GetString(3);
+                    aux.DeptoId = conexion.Lector.GetInt32(4);
+                    aux.Mail = conexion.Lector.GetString(5);
+                    aux.Activo = conexion.Lector.GetInt32(6);
                 }
                 return aux;
             }

@@ -42,6 +42,8 @@
             this.dtpFechaAlta = new System.Windows.Forms.DateTimePicker();
             this.cbConductor = new System.Windows.Forms.ComboBox();
             this.lblConductor = new System.Windows.Forms.Label();
+            this.btnOKModificar = new System.Windows.Forms.Button();
+            this.btnCXLModificar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblDominio
@@ -157,11 +159,32 @@
             this.lblConductor.TabIndex = 14;
             this.lblConductor.Text = "Conductor";
             // 
+            // btnOKModificar
+            // 
+            this.btnOKModificar.Location = new System.Drawing.Point(125, 397);
+            this.btnOKModificar.Name = "btnOKModificar";
+            this.btnOKModificar.Size = new System.Drawing.Size(147, 69);
+            this.btnOKModificar.TabIndex = 15;
+            this.btnOKModificar.Text = "Aceptar";
+            this.btnOKModificar.UseVisualStyleBackColor = true;
+            // 
+            // btnCXLModificar
+            // 
+            this.btnCXLModificar.Location = new System.Drawing.Point(280, 397);
+            this.btnCXLModificar.Name = "btnCXLModificar";
+            this.btnCXLModificar.Size = new System.Drawing.Size(147, 69);
+            this.btnCXLModificar.TabIndex = 16;
+            this.btnCXLModificar.Text = "Cancelar";
+            this.btnCXLModificar.UseVisualStyleBackColor = true;
+            this.btnCXLModificar.Click += new System.EventHandler(this.btnCXLModificar_Click);
+            // 
             // frmGestionVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(889, 540);
+            this.Controls.Add(this.btnCXLModificar);
+            this.Controls.Add(this.btnOKModificar);
             this.Controls.Add(this.lblConductor);
             this.Controls.Add(this.cbConductor);
             this.Controls.Add(this.dtpFechaAlta);
@@ -178,7 +201,7 @@
             this.Controls.Add(this.lblDominio);
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "frmGestionVehiculo";
-            this.Text = "Gestino de Vehículos";
+            this.Text = "Gestión de Vehículos";
             this.Load += new System.EventHandler(this.frmGestionVehiculo_Load);
             this.Controls.SetChildIndex(this.lblDominio, 0);
             this.Controls.SetChildIndex(this.tbDominio, 0);
@@ -194,6 +217,8 @@
             this.Controls.SetChildIndex(this.dtpFechaAlta, 0);
             this.Controls.SetChildIndex(this.cbConductor, 0);
             this.Controls.SetChildIndex(this.lblConductor, 0);
+            this.Controls.SetChildIndex(this.btnOKModificar, 0);
+            this.Controls.SetChildIndex(this.btnCXLModificar, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,5 +240,7 @@
         private System.Windows.Forms.DateTimePicker dtpFechaAlta;
         private System.Windows.Forms.ComboBox cbConductor;
         private System.Windows.Forms.Label lblConductor;
+        private System.Windows.Forms.Button btnOKModificar;
+        private System.Windows.Forms.Button btnCXLModificar;
     }
 }

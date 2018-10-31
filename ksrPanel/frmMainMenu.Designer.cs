@@ -41,6 +41,7 @@
             this.kilometrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pruebaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,7 +94,8 @@
             this.reportesToolStripMenuItem,
             this.novedadesConductorToolStripMenuItem,
             this.mantenimientoToolStripMenuItem,
-            this.kilometrosToolStripMenuItem});
+            this.kilometrosToolStripMenuItem,
+            this.pruebaToolStripMenuItem});
             this.vehiculosToolStripMenuItem.Name = "vehiculosToolStripMenuItem";
             this.vehiculosToolStripMenuItem.Size = new System.Drawing.Size(98, 29);
             this.vehiculosToolStripMenuItem.Text = "Vehiculos";
@@ -144,6 +146,13 @@
             this.aBMToolStripMenuItem1.Text = "ABM";
             this.aBMToolStripMenuItem1.Click += new System.EventHandler(this.aBMToolStripMenuItem1_Click);
             // 
+            // pruebaToolStripMenuItem
+            // 
+            this.pruebaToolStripMenuItem.Name = "pruebaToolStripMenuItem";
+            this.pruebaToolStripMenuItem.Size = new System.Drawing.Size(275, 30);
+            this.pruebaToolStripMenuItem.Text = "Prueba";
+            this.pruebaToolStripMenuItem.Click += new System.EventHandler(this.pruebaToolStripMenuItem_Click);
+            // 
             // frmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
@@ -176,5 +185,6 @@
         private System.Windows.Forms.ToolStripMenuItem novedadesConductorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kilometrosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pruebaToolStripMenuItem;
     }
 }

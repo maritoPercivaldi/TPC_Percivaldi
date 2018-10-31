@@ -39,5 +39,11 @@ namespace ksrPanel
             frmAbmVehiculos form = new frmAbmVehiculos();
             form.ShowDialog();
         }
+
+        private void pruebaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPruebas form = new FrmPruebas();
+            form.ShowDialog();
+        }
     }
 }

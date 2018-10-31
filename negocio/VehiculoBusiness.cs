@@ -49,5 +49,39 @@ namespace negocio
                 }
             }
         }
+
+        public int traerConductor(string Chapa)
+        {
+            AccesoDatos conexion = null;
+            int conductor;
+            conductor = 0;
+            try
+            {
+                conexion = new AccesoDatos();
+                conexion.setearConsulta("select IdConductor from VEHICULOS where Chapa = @Chapa");
+                conexion.Comando.Parameters.Clear();
+                conexion.Comando.Parameters.AddWithValue("@Chapa", Chapa);
+                conexion.abrirConexion();
+                conexion.ejecutarConsulta();
+                while(conexion.Lector.Read())
+                {
+                    conductor = conexion.Lector.GetInt32(0);
+                }
+                return conductor;
+                
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                if (conexion != null)
+                {
+                    conexion.cerrarConexion();
+                }
+            }
+        }
     }
 }
