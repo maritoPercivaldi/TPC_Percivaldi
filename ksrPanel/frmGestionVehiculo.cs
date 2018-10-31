@@ -14,9 +14,10 @@ namespace ksrPanel
 {
     public partial class frmGestionVehiculo : frmModelo
     {
-        private Vehiculos vehiculo;
-        private UsuarioBusiness negocioU = null;
-        private VehiculoBusiness negocioV = null;
+        private Vehiculos vehiculo = null;
+        private clsUsuarios conductor = null;
+        //private UsuarioBusiness negocioU = null;
+        //private VehiculoBusiness negocioV = null;
                 
         public frmGestionVehiculo()
         {
@@ -73,6 +74,59 @@ namespace ksrPanel
         private void btnCXLModificar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnOKModificar_Click(object sender, EventArgs e)
+        {
+            VehiculoBusiness vehiculoNegocio = new VehiculoBusiness();
+            try
+            {
+                if(vehiculo == null)
+                {
+                    vehiculo = new Vehiculos();
+                    
+                    
+                }
+
+                vehiculo.Chapa = tbDominio.Text;
+                vehiculo.Marca = tbMarca.Text;
+                vehiculo.Modelo = tbModelo.Text;
+                vehiculo.CodigoMotor = tbCodMotor.Text;
+                vehiculo.CodigoChasis = tbCodChasis.Text;
+                vehiculo.FechaAlta = dtpFechaAlta.Value;
+                 if (cbConductor.SelectedIndex == -1)//el usuario no selecciono conductor
+                    {
+                        vehiculo.Conductor.Id = -1;
+                    }
+                 else
+                    {
+                        vehiculo.Conductor.Id = cbConductor.SelectedIndex + 1; 
+                    }
+                if(vehiculo.Conductor.Id != -1)
+                {
+                    //alta
+                    vehiculoNegocio.altaVehiculo(vehiculo);
+                    MessageBox.Show("Alta Exitosa", "Gestión Vehículos");
+                    
+                }
+                 else
+                {
+                    //modficacion
+                    vehiculoNegocio.modificacarVehiculo(vehiculo);
+                    MessageBox.Show("Modificación Exitosa", "Gestión Vehículos");
+                }
+
+                Close();
+                
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

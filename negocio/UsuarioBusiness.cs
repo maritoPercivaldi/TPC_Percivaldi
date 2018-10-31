@@ -173,7 +173,7 @@ namespace negocio
 
         public void modificarUsuario(clsUsuarios usuario)
         {
-            AccesoDatos conexion;
+            AccesoDatos conexion = null;
             try
             {
                 conexion = new AccesoDatos();
@@ -194,6 +194,13 @@ namespace negocio
             {
 
                 throw ex;
+            }
+            finally
+            {
+                if(conexion != null)
+                {
+                    conexion.cerrarConexion();
+                }
             }
         }
 

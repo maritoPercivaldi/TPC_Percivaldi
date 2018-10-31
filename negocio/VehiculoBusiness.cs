@@ -83,5 +83,78 @@ namespace negocio
                 }
             }
         }
+
+        public void altaVehiculo(Vehiculos vehiculo)
+        {
+            //instancion la conexion y la nuleo.
+            AccesoDatos conexion = null;
+            try
+            {
+                conexion = new AccesoDatos();
+                //consulta
+                conexion.setearConsulta("insert into VEHICULOS (Chapa,Marca,Modelo,CodigoMotor,CodigoChasis,FechaAlta,IdConductor,Estado) values " +
+                    "(@Chapa,@Marca,@Modelo,@CodigoMotor,@CodigoChasis,@FechaAlta,@IdConductor,@Estado)");
+                //limpio los parametros
+                conexion.Comando.Parameters.Clear();
+                conexion.Comando.Parameters.AddWithValue("@Chapa", vehiculo.Chapa);
+                conexion.Comando.Parameters.AddWithValue("@Marca", vehiculo.Marca);
+                conexion.Comando.Parameters.AddWithValue("@Modelo", vehiculo.Modelo);
+                conexion.Comando.Parameters.AddWithValue("@CodigoMotor", vehiculo.CodigoMotor);
+                conexion.Comando.Parameters.AddWithValue("@CodigoChasis", vehiculo.CodigoChasis);
+                conexion.Comando.Parameters.AddWithValue("@FechaAlta", vehiculo.FechaAlta);
+                conexion.Comando.Parameters.AddWithValue("@IdConductor", vehiculo.Conductor.Id);
+                conexion.Comando.Parameters.AddWithValue("@Estado", 1);
+                //abro la conexion
+                conexion.abrirConexion();
+                conexion.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                if(conexion != null)
+                {
+                    conexion.cerrarConexion();
+                }
+            }
+
+        }
+
+        public void modificacarVehiculo(Vehiculos vehiculo)
+        {
+            AccesoDatos conexion = null;
+            try
+            {
+                conexion = new AccesoDatos();
+                conexion.setearConsulta("Update vehiculos set Chapa = @Chapa, Marca = @Marca, Modelo = @Modelo, CodigoMotor = @CodigoMotor, CodigoChasis = @CodigoChasis," +
+                    "FechaAlta = @FechaAlta, IdConductor = @IdConductor where IdAuto = @IdAuto");
+                conexion.Comando.Parameters.Clear();
+                conexion.Comando.Parameters.AddWithValue("@Chapa", vehiculo.Chapa);
+                conexion.Comando.Parameters.AddWithValue("@Marca", vehiculo.Marca);
+                conexion.Comando.Parameters.AddWithValue("@Modelo", vehiculo.Modelo);
+                conexion.Comando.Parameters.AddWithValue("@CodigoMotor", vehiculo.CodigoMotor);
+                conexion.Comando.Parameters.AddWithValue("@CodigoChasis", vehiculo.CodigoChasis);
+                conexion.Comando.Parameters.AddWithValue("@FechaAlta", vehiculo.FechaAlta);
+                conexion.Comando.Parameters.AddWithValue("@IdConductor", vehiculo.Conductor.Id);
+                conexion.Comando.Parameters.AddWithValue("@IdAuto", vehiculo.IdAuto);
+                conexion.abrirConexion();
+                conexion.ejecutarAccion();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if(conexion != null)
+                {
+                    conexion.cerrarConexion();
+                }
+            }
+        }
     }
 }

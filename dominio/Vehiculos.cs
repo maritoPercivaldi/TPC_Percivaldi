@@ -37,9 +37,7 @@ namespace dominio
 
         public Vehiculos()
         {
-            clsUsuarios conductor = new clsUsuarios();
-            
-
+            Conductor = new clsUsuarios();
         }
 
     }

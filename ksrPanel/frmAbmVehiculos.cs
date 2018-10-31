@@ -55,6 +55,7 @@ namespace ksrPanel
         {
             frmGestionVehiculo form = new frmGestionVehiculo();
             form.ShowDialog();
+            cargar();
         }
 
         private void btnModificarVehiculo_Click(object sender, EventArgs e)
@@ -66,8 +67,11 @@ namespace ksrPanel
             try
             {
                 modificado = (Vehiculos)dgvVehiculos.CurrentRow.DataBoundItem;
-                modificado.Conductor = (clsUsuarios)conductorBusines.cargarData((int)vehiculoBusiness.traerConductor(modificado.Chapa));
-
+                //verificamos si el vehiculo tiene conductor. si es asi le cargamos el conductor y lo pasamos con el vehiculo.
+                if(vehiculoBusiness.traerConductor(modificado.Chapa)!= 0) //si es distinto de cero tiene conductor.
+                {
+                    modificado.Conductor = (clsUsuarios)conductorBusines.cargarData((int)vehiculoBusiness.traerConductor(modificado.Chapa));
+                }
                 //conductormodificado = conductorBusines.cargarData(modificado.Conductor.Id);
                 //modificado.Conductor.Id = conductormodificado.Id;
                 //modificado.Conductor.Nombre = conductormodificado.Nombre;

@@ -167,6 +167,7 @@
             this.btnOKModificar.TabIndex = 15;
             this.btnOKModificar.Text = "Aceptar";
             this.btnOKModificar.UseVisualStyleBackColor = true;
+            this.btnOKModificar.Click += new System.EventHandler(this.btnOKModificar_Click);
             // 
             // btnCXLModificar
             // 
