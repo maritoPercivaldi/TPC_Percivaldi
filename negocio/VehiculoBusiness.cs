@@ -92,8 +92,8 @@ namespace negocio
             {
                 conexion = new AccesoDatos();
                 //consulta
-                conexion.setearConsulta("insert into VEHICULOS (Chapa,Marca,Modelo,CodigoMotor,CodigoChasis,FechaAlta,IdConductor,Estado) values " +
-                    "(@Chapa,@Marca,@Modelo,@CodigoMotor,@CodigoChasis,@FechaAlta,@IdConductor,@Estado)");
+                conexion.setearConsulta("insert into VEHICULOS (Chapa,Marca,Modelo,CodigoMotor,CodigoChasis,FechaAlta,Estado) values " +
+                    "(@Chapa,@Marca,@Modelo,@CodigoMotor,@CodigoChasis,@FechaAlta,@Estado)");
                 //limpio los parametros
                 conexion.Comando.Parameters.Clear();
                 conexion.Comando.Parameters.AddWithValue("@Chapa", vehiculo.Chapa);
@@ -101,8 +101,7 @@ namespace negocio
                 conexion.Comando.Parameters.AddWithValue("@Modelo", vehiculo.Modelo);
                 conexion.Comando.Parameters.AddWithValue("@CodigoMotor", vehiculo.CodigoMotor);
                 conexion.Comando.Parameters.AddWithValue("@CodigoChasis", vehiculo.CodigoChasis);
-                conexion.Comando.Parameters.AddWithValue("@FechaAlta", vehiculo.FechaAlta);
-                conexion.Comando.Parameters.AddWithValue("@IdConductor", vehiculo.Conductor.Id);
+                conexion.Comando.Parameters.AddWithValue("@FechaAlta", vehiculo.FechaAlta.Date);
                 conexion.Comando.Parameters.AddWithValue("@Estado", 1);
                 //abro la conexion
                 conexion.abrirConexion();
@@ -123,30 +122,56 @@ namespace negocio
 
         }
 
+        public void baja(Vehiculos vehiculoBaja)
+        {
+            AccesoDatos conexion = null;
+            try
+            {
+                conexion = new AccesoDatos();
+                conexion.setearConsulta("Update vehiculos set Estado = 0 where Chapa = @Chapa");
+                conexion.Comando.Parameters.Clear();
+                conexion.Comando.Parameters.AddWithValue("@Chapa", vehiculoBaja.Chapa);
+                conexion.abrirConexion();
+                conexion.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                if(conexion !=null)
+                {
+                    conexion.cerrarConexion();
+                }
+            }
+        }
+
         public void modificacarVehiculo(Vehiculos vehiculo)
         {
             AccesoDatos conexion = null;
             try
             {
                 conexion = new AccesoDatos();
-                conexion.setearConsulta("Update vehiculos set Chapa = @Chapa, Marca = @Marca, Modelo = @Modelo, CodigoMotor = @CodigoMotor, CodigoChasis = @CodigoChasis," +
-                    "FechaAlta = @FechaAlta, IdConductor = @IdConductor where IdAuto = @IdAuto");
+                conexion.setearConsulta("Update vehiculos set  Marca = @Marca, Modelo = @Modelo, CodigoMotor = @CodigoMotor, CodigoChasis = @CodigoChasis," +
+                    "FechaAlta = @FechaAlta where Chapa = @Chapa");
                 conexion.Comando.Parameters.Clear();
                 conexion.Comando.Parameters.AddWithValue("@Chapa", vehiculo.Chapa);
                 conexion.Comando.Parameters.AddWithValue("@Marca", vehiculo.Marca);
                 conexion.Comando.Parameters.AddWithValue("@Modelo", vehiculo.Modelo);
                 conexion.Comando.Parameters.AddWithValue("@CodigoMotor", vehiculo.CodigoMotor);
                 conexion.Comando.Parameters.AddWithValue("@CodigoChasis", vehiculo.CodigoChasis);
-                conexion.Comando.Parameters.AddWithValue("@FechaAlta", vehiculo.FechaAlta);
-                conexion.Comando.Parameters.AddWithValue("@IdConductor", vehiculo.Conductor.Id);
+                conexion.Comando.Parameters.AddWithValue("@FechaAlta", vehiculo.FechaAlta.Date);
                 conexion.Comando.Parameters.AddWithValue("@IdAuto", vehiculo.IdAuto);
                 conexion.abrirConexion();
                 conexion.ejecutarAccion();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
             finally
             {
@@ -155,6 +180,29 @@ namespace negocio
                     conexion.cerrarConexion();
                 }
             }
+        }
+
+        public int VehiculoExistente(string dominio)
+        {
+            AccesoDatos conexion = null;
+            try
+            {
+                int registros = 0;
+                conexion = new AccesoDatos();
+                conexion.setearConsulta("Select Chapa From Vehiculos where Chapa = @Chapa");
+                conexion.Comando.Parameters.Clear();
+                conexion.Comando.Parameters.AddWithValue("@Chapa", dominio);
+                conexion.abrirConexion();
+                registros = conexion.ejecutarAccionReturn();
+
+                return registros;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
     }
 }

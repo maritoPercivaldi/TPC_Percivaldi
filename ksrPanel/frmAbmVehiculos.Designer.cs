@@ -72,6 +72,7 @@
             this.btnBajaVehiculo.TabIndex = 4;
             this.btnBajaVehiculo.Text = "Baja Vehículo";
             this.btnBajaVehiculo.UseVisualStyleBackColor = true;
+            this.btnBajaVehiculo.Click += new System.EventHandler(this.btnBajaVehiculo_Click);
             // 
             // frmAbmVehiculos
             // 

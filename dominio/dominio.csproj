@@ -44,6 +44,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="clsUsuarios.cs" />
     <Compile Include="Comentarios.cs" />
+    <Compile Include="ConductorPorVehiculo.cs" />
     <Compile Include="Departamentos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Requerimientos.cs" />

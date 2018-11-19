@@ -61,17 +61,17 @@ namespace ksrPanel
         private void btnModificarVehiculo_Click(object sender, EventArgs e)
         {
             Vehiculos modificado;
-            clsUsuarios conductormodificado = new clsUsuarios();
-            UsuarioBusiness conductorBusines = new UsuarioBusiness();
-            VehiculoBusiness vehiculoBusiness = new VehiculoBusiness();
+            //clsUsuarios conductormodificado = new clsUsuarios();
+            //UsuarioBusiness conductorBusines = new UsuarioBusiness();
+            //VehiculoBusiness vehiculoBusiness = new VehiculoBusiness();
             try
             {
                 modificado = (Vehiculos)dgvVehiculos.CurrentRow.DataBoundItem;
                 //verificamos si el vehiculo tiene conductor. si es asi le cargamos el conductor y lo pasamos con el vehiculo.
-                if(vehiculoBusiness.traerConductor(modificado.Chapa)!= 0) //si es distinto de cero tiene conductor.
-                {
-                    modificado.Conductor = (clsUsuarios)conductorBusines.cargarData((int)vehiculoBusiness.traerConductor(modificado.Chapa));
-                }
+                //if(vehiculoBusiness.traerConductor(modificado.Chapa)!= 0) //si es distinto de cero tiene conductor.
+                //{
+                //    modificado.Conductor = (clsUsuarios)conductorBusines.cargarData((int)vehiculoBusiness.traerConductor(modificado.Chapa));
+                //}
                 //conductormodificado = conductorBusines.cargarData(modificado.Conductor.Id);
                 //modificado.Conductor.Id = conductormodificado.Id;
                 //modificado.Conductor.Nombre = conductormodificado.Nombre;
@@ -86,6 +86,25 @@ namespace ksrPanel
             {
 
                 MessageBox.Show(ex.Message + " - " + ex.ToString());
+            }
+
+        }
+
+        private void btnBajaVehiculo_Click(object sender, EventArgs e)
+        {
+            Vehiculos vehiculoBaja;
+            VehiculoBusiness negocio = new VehiculoBusiness();
+            try
+            {
+                vehiculoBaja = (Vehiculos)dgvVehiculos.CurrentRow.DataBoundItem;
+                negocio.baja(vehiculoBaja);
+                cargar();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + " - "+ ex.ToString());
             }
 
         }

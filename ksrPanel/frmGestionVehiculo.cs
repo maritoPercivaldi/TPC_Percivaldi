@@ -15,7 +15,7 @@ namespace ksrPanel
     public partial class frmGestionVehiculo : frmModelo
     {
         private Vehiculos vehiculo = null;
-        private clsUsuarios conductor = null;
+        
         //private UsuarioBusiness negocioU = null;
         //private VehiculoBusiness negocioV = null;
                 
@@ -44,30 +44,30 @@ namespace ksrPanel
             //VehiculoBusiness negocioVehiculo = new VehiculoBusiness();
             try
             {
-             UsuarioBusiness negocioUsuario = new UsuarioBusiness();
-             cbConductor.DataSource = negocioUsuario.listarApenom();
-             cbConductor.DisplayMember = "ApeNom";
-             cbConductor.ValueMember = "Id";
-             if (vehiculo == null)
+             
+             if (vehiculo != null)//si es distinto a null es porque estamos modificando.
              {
-                cbConductor.SelectedIndex = -1;
+                    //el textbox del dominio no se puede cambiar. para cambiar una patente hay que boletear el auto.
+                    tbDominio.Enabled = false;
+                    btnOKModificar.Text = "Modificar";
+                    tbDominio.Text = vehiculo.Chapa;
+                    tbMarca.Text = vehiculo.Marca;
+                    tbModelo.Text = vehiculo.Modelo;
+                    tbCodMotor.Text = vehiculo.CodigoMotor;
+                    tbCodChasis.Text = vehiculo.CodigoChasis;
+                    dtpFechaAlta.Value = vehiculo.FechaAlta.Date;
              }
              else
-             {
-                tbDominio.Text = vehiculo.Chapa;
-                tbMarca.Text = vehiculo.Marca;
-                tbModelo.Text = vehiculo.Modelo;
-                tbCodMotor.Text = vehiculo.CodigoMotor;
-                tbCodChasis.Text = vehiculo.CodigoChasis;
-                dtpFechaAlta.Value = vehiculo.FechaAlta.Date;
-                cbConductor.SelectedValue = (int)vehiculo.Conductor.Id;
-             }
-                }
-                catch (Exception ex)
                 {
+                    MessageBox.Show("vehiculo nuevito!");
+                }
+             
+            }
+            catch (Exception ex)
+            {
 
                     MessageBox.Show(ex.Message + " - " + ex.ToString());
-                }
+            }
 
         }
 
@@ -81,44 +81,44 @@ namespace ksrPanel
             VehiculoBusiness vehiculoNegocio = new VehiculoBusiness();
             try
             {
-                if(vehiculo == null)
+                if(vehiculo != null)//vehiculo a modificar.
                 {
-                    vehiculo = new Vehiculos();
-                    
-                    
-                }
-
-                vehiculo.Chapa = tbDominio.Text;
-                vehiculo.Marca = tbMarca.Text;
-                vehiculo.Modelo = tbModelo.Text;
-                vehiculo.CodigoMotor = tbCodMotor.Text;
-                vehiculo.CodigoChasis = tbCodChasis.Text;
-                vehiculo.FechaAlta = dtpFechaAlta.Value;
-                 if (cbConductor.SelectedIndex == -1)//el usuario no selecciono conductor
-                    {
-                        vehiculo.Conductor.Id = -1;
-                    }
-                 else
-                    {
-                        vehiculo.Conductor.Id = cbConductor.SelectedIndex + 1; 
-                    }
-                if(vehiculo.Conductor.Id != -1)
-                {
-                    //alta
-                    vehiculoNegocio.altaVehiculo(vehiculo);
-                    MessageBox.Show("Alta Exitosa", "Gestión Vehículos");
-                    
-                }
-                 else
-                {
-                    //modficacion
+                    vehiculo.Chapa = tbDominio.Text;
+                    vehiculo.Marca = tbMarca.Text;
+                    vehiculo.Modelo = tbModelo.Text;
+                    vehiculo.CodigoMotor = tbCodMotor.Text;
+                    vehiculo.CodigoChasis = tbCodChasis.Text;
+                    vehiculo.FechaAlta = dtpFechaAlta.Value;
                     vehiculoNegocio.modificacarVehiculo(vehiculo);
                     MessageBox.Show("Modificación Exitosa", "Gestión Vehículos");
+                    Close();
+                    return;
+                }
+                else
+                {
+                    vehiculo = new Vehiculos();
+                    vehiculo.Chapa = tbDominio.Text;
+                    vehiculo.Marca = tbMarca.Text;
+                    vehiculo.Modelo = tbModelo.Text;
+                    vehiculo.CodigoMotor = tbCodMotor.Text;
+                    vehiculo.CodigoChasis = tbCodChasis.Text;
+                    vehiculo.FechaAlta = dtpFechaAlta.Value;
                 }
 
-                Close();
-                
+                //revisamos si el dominio del vehiculo a ingresar nuevo no esta repetido en la base
+                int prueba = vehiculoNegocio.VehiculoExistente(vehiculo.Chapa);
+                if(prueba == 0)
+                {//vehiculo nuevo por el lado del true
+                    vehiculoNegocio.altaVehiculo(vehiculo);
+                    MessageBox.Show("Alta Exitosa", "Gestión Vehículos");
+                    Close();
 
+                }
+                else
+                {//vehiculo existente
+                    MessageBox.Show("Vehiculo Existente!", "Alerta!");
+                    return;
+                }
 
             }
             catch (Exception ex)

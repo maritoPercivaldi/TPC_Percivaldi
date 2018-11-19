@@ -40,8 +40,6 @@
             this.lblCodigoChasis = new System.Windows.Forms.Label();
             this.lblFechaAlta = new System.Windows.Forms.Label();
             this.dtpFechaAlta = new System.Windows.Forms.DateTimePicker();
-            this.cbConductor = new System.Windows.Forms.ComboBox();
-            this.lblConductor = new System.Windows.Forms.Label();
             this.btnOKModificar = new System.Windows.Forms.Button();
             this.btnCXLModificar = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -142,23 +140,6 @@
             this.dtpFechaAlta.Size = new System.Drawing.Size(358, 32);
             this.dtpFechaAlta.TabIndex = 6;
             // 
-            // cbConductor
-            // 
-            this.cbConductor.FormattingEnabled = true;
-            this.cbConductor.Location = new System.Drawing.Point(125, 310);
-            this.cbConductor.Name = "cbConductor";
-            this.cbConductor.Size = new System.Drawing.Size(358, 32);
-            this.cbConductor.TabIndex = 7;
-            // 
-            // lblConductor
-            // 
-            this.lblConductor.AutoSize = true;
-            this.lblConductor.Location = new System.Drawing.Point(489, 313);
-            this.lblConductor.Name = "lblConductor";
-            this.lblConductor.Size = new System.Drawing.Size(98, 24);
-            this.lblConductor.TabIndex = 14;
-            this.lblConductor.Text = "Conductor";
-            // 
             // btnOKModificar
             // 
             this.btnOKModificar.Location = new System.Drawing.Point(125, 397);
@@ -186,8 +167,6 @@
             this.ClientSize = new System.Drawing.Size(889, 540);
             this.Controls.Add(this.btnCXLModificar);
             this.Controls.Add(this.btnOKModificar);
-            this.Controls.Add(this.lblConductor);
-            this.Controls.Add(this.cbConductor);
             this.Controls.Add(this.dtpFechaAlta);
             this.Controls.Add(this.lblFechaAlta);
             this.Controls.Add(this.tbCodChasis);
@@ -216,8 +195,6 @@
             this.Controls.SetChildIndex(this.tbCodChasis, 0);
             this.Controls.SetChildIndex(this.lblFechaAlta, 0);
             this.Controls.SetChildIndex(this.dtpFechaAlta, 0);
-            this.Controls.SetChildIndex(this.cbConductor, 0);
-            this.Controls.SetChildIndex(this.lblConductor, 0);
             this.Controls.SetChildIndex(this.btnOKModificar, 0);
             this.Controls.SetChildIndex(this.btnCXLModificar, 0);
             this.ResumeLayout(false);
@@ -239,8 +216,6 @@
         private System.Windows.Forms.Label lblCodigoChasis;
         private System.Windows.Forms.Label lblFechaAlta;
         private System.Windows.Forms.DateTimePicker dtpFechaAlta;
-        private System.Windows.Forms.ComboBox cbConductor;
-        private System.Windows.Forms.Label lblConductor;
         private System.Windows.Forms.Button btnOKModificar;
         private System.Windows.Forms.Button btnCXLModificar;
     }
