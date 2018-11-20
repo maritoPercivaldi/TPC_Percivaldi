@@ -36,12 +36,8 @@
             this.vehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.novedadesConductorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kilometrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pruebaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,11 +87,7 @@
             // 
             this.vehiculosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aBMToolStripMenuItem,
-            this.reportesToolStripMenuItem,
-            this.novedadesConductorToolStripMenuItem,
-            this.mantenimientoToolStripMenuItem,
-            this.kilometrosToolStripMenuItem,
-            this.pruebaToolStripMenuItem});
+            this.reportesToolStripMenuItem});
             this.vehiculosToolStripMenuItem.Name = "vehiculosToolStripMenuItem";
             this.vehiculosToolStripMenuItem.Size = new System.Drawing.Size(98, 29);
             this.vehiculosToolStripMenuItem.Text = "Vehiculos";
@@ -103,33 +95,15 @@
             // aBMToolStripMenuItem
             // 
             this.aBMToolStripMenuItem.Name = "aBMToolStripMenuItem";
-            this.aBMToolStripMenuItem.Size = new System.Drawing.Size(275, 30);
+            this.aBMToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.aBMToolStripMenuItem.Text = "ABM";
             this.aBMToolStripMenuItem.Click += new System.EventHandler(this.aBMToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(275, 30);
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.reportesToolStripMenuItem.Text = "Reportes";
-            // 
-            // novedadesConductorToolStripMenuItem
-            // 
-            this.novedadesConductorToolStripMenuItem.Name = "novedadesConductorToolStripMenuItem";
-            this.novedadesConductorToolStripMenuItem.Size = new System.Drawing.Size(275, 30);
-            this.novedadesConductorToolStripMenuItem.Text = "Novedades Conductor";
-            // 
-            // mantenimientoToolStripMenuItem
-            // 
-            this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
-            this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(275, 30);
-            this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
-            // 
-            // kilometrosToolStripMenuItem
-            // 
-            this.kilometrosToolStripMenuItem.Name = "kilometrosToolStripMenuItem";
-            this.kilometrosToolStripMenuItem.Size = new System.Drawing.Size(275, 30);
-            this.kilometrosToolStripMenuItem.Text = "Kilometros";
             // 
             // usuariosToolStripMenuItem
             // 
@@ -145,13 +119,6 @@
             this.aBMToolStripMenuItem1.Size = new System.Drawing.Size(134, 30);
             this.aBMToolStripMenuItem1.Text = "ABM";
             this.aBMToolStripMenuItem1.Click += new System.EventHandler(this.aBMToolStripMenuItem1_Click);
-            // 
-            // pruebaToolStripMenuItem
-            // 
-            this.pruebaToolStripMenuItem.Name = "pruebaToolStripMenuItem";
-            this.pruebaToolStripMenuItem.Size = new System.Drawing.Size(275, 30);
-            this.pruebaToolStripMenuItem.Text = "Prueba";
-            this.pruebaToolStripMenuItem.Click += new System.EventHandler(this.pruebaToolStripMenuItem_Click);
             // 
             // frmMainMenu
             // 
@@ -182,9 +149,5 @@
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aBMToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem novedadesConductorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem kilometrosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pruebaToolStripMenuItem;
     }
 }

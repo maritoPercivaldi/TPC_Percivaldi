@@ -7,20 +7,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using dominio;
+using negocio;
 
 namespace ksrPanel
 {
     public partial class Form1 : ksrPanel.frmModelo
     {
+
+        
         public Form1()
         {
             InitializeComponent();
             this.Size = new System.Drawing.Size(800, 800);
             cambiarUbicacionLogo(680, 600);
+            frmLogin form = new frmLogin();
+            form.ShowDialog();
         }
+
+        
+
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             frmMainMenu form = new frmMainMenu();
             form.ShowDialog();
 

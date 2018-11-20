@@ -41,3 +41,5 @@ C:\Users\Mario Percivaldi\Documents\Proyectos\TPC_Percivaldi\ksrPanel\obj\Debug\
 C:\Users\Mario Percivaldi\Documents\Proyectos\TPC_Percivaldi\ksrPanel\obj\Debug\ksrPanel.frmAbmVehiculos.resources
 C:\Users\Mario Percivaldi\Documents\Proyectos\TPC_Percivaldi\ksrPanel\obj\Debug\ksrPanel.frmGestionVehiculo.resources
 C:\Users\Mario Percivaldi\Documents\Proyectos\TPC_Percivaldi\ksrPanel\obj\Debug\ksrPanel.FrmPruebas.resources
+C:\Users\Mario Percivaldi\Documents\Proyectos\TPC_Percivaldi\ksrPanel\obj\Debug\ksrPanel.frmGestionKilometros.resources
+C:\Users\Mario Percivaldi\Documents\Proyectos\TPC_Percivaldi\ksrPanel\obj\Debug\ksrPanel.frmLogin.resources

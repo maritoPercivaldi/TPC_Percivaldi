@@ -46,6 +46,7 @@
     <Compile Include="Comentarios.cs" />
     <Compile Include="ConductorPorVehiculo.cs" />
     <Compile Include="Departamentos.cs" />
+    <Compile Include="KilometrosPorVehiculos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Requerimientos.cs" />
     <Compile Include="ValidacionesLocas.cs" />

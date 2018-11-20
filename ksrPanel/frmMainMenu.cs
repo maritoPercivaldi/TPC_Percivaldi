@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using dominio;
 
 namespace ksrPanel
 {
     public partial class frmMainMenu : ksrPanel.frmModelo
     {
+        private clsUsuarios userLoged;
+
         public frmMainMenu()
         {
             InitializeComponent();
@@ -20,6 +23,14 @@ namespace ksrPanel
 
 
 
+        }
+
+        public frmMainMenu(clsUsuarios userLoged)
+        {
+            InitializeComponent();
+            this.Size = new System.Drawing.Size(1024, 1024);
+            cambiarUbicacionLogo(904, 824);
+            this.userLoged = userLoged;
         }
 
         private void aBMToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -36,7 +47,7 @@ namespace ksrPanel
 
         private void aBMToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAbmVehiculos form = new frmAbmVehiculos();
+            frmAbmVehiculos form = new frmAbmVehiculos(userLoged);
             form.ShowDialog();
         }
 
@@ -45,5 +56,7 @@ namespace ksrPanel
             FrmPruebas form = new FrmPruebas();
             form.ShowDialog();
         }
+
+        
     }
 }

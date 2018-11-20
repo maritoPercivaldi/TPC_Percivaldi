@@ -15,11 +15,21 @@ namespace ksrPanel
     public partial class frmAbmVehiculos : frmModelo
     {
         private List<Vehiculos> listaVehiculos;
+        private clsUsuarios userLoged;
+
         public frmAbmVehiculos()
         {
             InitializeComponent();
             this.Size = new System.Drawing.Size(1024, 1024);
             cambiarUbicacionLogo(904, 824);
+        }
+
+        public frmAbmVehiculos(clsUsuarios userLoged)
+        {
+            InitializeComponent();
+            this.Size = new System.Drawing.Size(1024, 1024);
+            cambiarUbicacionLogo(904, 824);
+            this.userLoged = userLoged;
         }
 
         private void frmAbmVehiculos_Load(object sender, EventArgs e)
@@ -107,6 +117,15 @@ namespace ksrPanel
                 MessageBox.Show(ex.Message + " - "+ ex.ToString());
             }
 
+        }
+
+        private void btnRegistrarKM_Click(object sender, EventArgs e)
+        {
+            Vehiculos VehiculoARegistrarKm;
+            VehiculoARegistrarKm = (Vehiculos)dgvVehiculos.CurrentRow.DataBoundItem;
+            frmGestionKilometros cargaKm = new frmGestionKilometros(VehiculoARegistrarKm,userLoged);
+            cargaKm.ShowDialog();
+            cargar();
         }
     }
 }

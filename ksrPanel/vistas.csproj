@@ -75,11 +75,23 @@
     <Compile Include="frmCompras.Designer.cs">
       <DependentUpon>frmCompras.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGestionKilometros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionKilometros.Designer.cs">
+      <DependentUpon>frmGestionKilometros.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGestionVehiculo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmGestionVehiculo.Designer.cs">
       <DependentUpon>frmGestionVehiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMainMenu.cs">
       <SubType>Form</SubType>
@@ -122,8 +134,14 @@
     <EmbeddedResource Include="frmCompras.resx">
       <DependentUpon>frmCompras.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionKilometros.resx">
+      <DependentUpon>frmGestionKilometros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGestionVehiculo.resx">
       <DependentUpon>frmGestionVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMainMenu.resx">
       <DependentUpon>frmMainMenu.cs</DependentUpon>
