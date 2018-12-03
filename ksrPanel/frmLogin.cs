@@ -90,5 +90,11 @@ namespace ksrPanel
             
             
         }
+
+        private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+            
+        }
     }
 }

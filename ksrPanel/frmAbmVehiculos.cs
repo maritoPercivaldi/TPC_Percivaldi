@@ -122,8 +122,9 @@ namespace ksrPanel
         private void btnRegistrarKM_Click(object sender, EventArgs e)
         {
             Vehiculos VehiculoARegistrarKm;
+            clsUsuarios usuarioLogeado = userLoged;
             VehiculoARegistrarKm = (Vehiculos)dgvVehiculos.CurrentRow.DataBoundItem;
-            frmGestionKilometros cargaKm = new frmGestionKilometros(VehiculoARegistrarKm,userLoged);
+            frmGestionKilometros cargaKm = new frmGestionKilometros(VehiculoARegistrarKm,usuarioLogeado);
             cargaKm.ShowDialog();
             cargar();
         }

@@ -21,13 +21,34 @@ namespace negocio
                 conexion.Comando.Parameters.AddWithValue("@FechaRegistro",kmARegistrar.FechaCarga.Date);
                 conexion.Comando.Parameters.AddWithValue("@IdVehiculo", kmARegistrar.VehiculoKM.IdAuto);
                 conexion.Comando.Parameters.AddWithValue("@IdUsuarioReg", kmARegistrar.UsuarioCarga.Id);
-                conexion.Comando.Parameters.AddWithValue("@KmRegistro", kmARegistrar.)
+                conexion.Comando.Parameters.AddWithValue("@KmRegistro", kmARegistrar.Kilometros);
+                conexion.abrirConexion();
+                conexion.ejecutarAccion();
             }
             catch (Exception ex)
             {
 
                 throw ex;
             }
+        }
+
+        public bool VerificarConsistencia(KilometrosPorVehiculos kmARegistrar)
+        {
+            bool ValidaOk = false;
+            AccesoDatos conexion = null;
+            try
+            {
+                conexion = new AccesoDatos();
+                conexion.setearConsulta("");
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
+            return ValidaOk;
         }
     }
 }

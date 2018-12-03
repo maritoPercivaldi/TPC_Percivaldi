@@ -18,7 +18,7 @@ namespace negocio
             try
             {
                 conexion = new AccesoDatos();
-                conexion.setearConsulta("select veh.Chapa, veh.Marca,veh.Modelo,veh.FechaAlta,veh.estado,veh.CodigoMotor,veh.CodigoChasis from VEHICULOS as VEH where estado = 1");
+                conexion.setearConsulta("select veh.Chapa, veh.Marca,veh.Modelo,veh.FechaAlta,veh.estado,veh.CodigoMotor,veh.CodigoChasis,veh.IdAuto from VEHICULOS as VEH where estado = 1");
                 conexion.abrirConexion();
                 conexion.ejecutarConsulta();
                 while(conexion.Lector.Read())
@@ -31,6 +31,7 @@ namespace negocio
                     aux.Estado = conexion.Lector.GetInt32(4);
                     aux.CodigoMotor = conexion.Lector.GetString(5);
                     aux.CodigoChasis = conexion.Lector.GetString(6);
+                    aux.IdAuto = conexion.Lector.GetInt32(7);
                     lista.Add(aux);
                 }
                 return lista;

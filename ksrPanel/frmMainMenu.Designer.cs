@@ -95,14 +95,14 @@
             // aBMToolStripMenuItem
             // 
             this.aBMToolStripMenuItem.Name = "aBMToolStripMenuItem";
-            this.aBMToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.aBMToolStripMenuItem.Size = new System.Drawing.Size(166, 30);
             this.aBMToolStripMenuItem.Text = "ABM";
             this.aBMToolStripMenuItem.Click += new System.EventHandler(this.aBMToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(166, 30);
             this.reportesToolStripMenuItem.Text = "Reportes";
             // 
             // usuariosToolStripMenuItem
@@ -129,6 +129,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMainMenu";
             this.Text = "frmMainMenu";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMainMenu_FormClosed);
             this.Controls.SetChildIndex(this.menuStrip1, 0);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

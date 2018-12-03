@@ -57,6 +57,10 @@ namespace ksrPanel
             form.ShowDialog();
         }
 
-        
+        private void frmMainMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            MessageBox.Show("Gracias por usar la aplicacion", "Salida!");
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

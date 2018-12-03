@@ -31,7 +31,8 @@ namespace ksrPanel
             this.Size = new System.Drawing.Size(600, 400);
             cambiarUbicacionLogo(280, 400);
             vehiculo = VehiculoModificado;
-            lblVehiculoRegistrado.Text = vehiculo.Chapa + " - " + vehiculo.Marca + " - " + vehiculo.Modelo;
+            kmARegistrar = new KilometrosPorVehiculos();
+            lblVehiculoRegistrado.Text = vehiculo.Chapa + " - " + vehiculo.Marca + " - " + vehiculo.Modelo + " - " + vehiculo.IdAuto;
             kmARegistrar.UsuarioCarga = userLoged;
             kmARegistrar.VehiculoKM = vehiculo;
         }
@@ -47,17 +48,18 @@ namespace ksrPanel
             {
                 try
                 {
+                   
                     kmARegistrar.FechaCarga = dtpFechaRegistroKM.Value;
                     kmARegistrar.Kilometros = Convert.ToInt32(tbKmRegistro.Text);
+                    negocio = new kmPorVehiculosBusiness(); 
                     negocio.AltaRegistro(kmARegistrar);
-                    
-
+                    Close();
                 }
                 catch (Exception ex)
                 {
-
                     MessageBox.Show(ex.Message + " - " + ex.ToString(),"Error!");
                 }
+                
             }
 
         }
