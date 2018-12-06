@@ -128,5 +128,15 @@ namespace ksrPanel
             cargaKm.ShowDialog();
             cargar();
         }
+
+        private void btbAsignarChofer_Click(object sender, EventArgs e)
+        {
+            Vehiculos VehiculoARegistrarKm;
+            VehiculoARegistrarKm = (Vehiculos)dgvVehiculos.CurrentRow.DataBoundItem;
+            frmAsignarChofer asignarConductor = new frmAsignarChofer(VehiculoARegistrarKm);
+            asignarConductor.ShowDialog();
+            cargar();
+
+        }
     }
 }

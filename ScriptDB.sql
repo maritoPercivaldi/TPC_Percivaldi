@@ -27,6 +27,16 @@ CREATE TABLE ROLES(
 	NOMBREROL VARCHAR(30) NOT NULL,
 )
 
+create table CONDUCTORXVEHICULO(
+	ID int identity (1,1) primary key,
+	IDVEHICULO int foreign key references vehiculos (IdAuto),
+	IDUSUARIO INT FOREIGN KEY REFERENCES USUARIOS (ID),
+	FECHAREGIN DATE,
+	FECHAREGOUT DATE,
+	ESTADO INT Check (ESTADO =1 or estado =2)
+	)
+
+
 USE [PERCIVALDI_DB]
 GO
 

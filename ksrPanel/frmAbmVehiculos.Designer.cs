@@ -94,6 +94,7 @@
             this.btbAsignarChofer.TabIndex = 6;
             this.btbAsignarChofer.Text = "Asignar Chofer";
             this.btbAsignarChofer.UseVisualStyleBackColor = true;
+            this.btbAsignarChofer.Click += new System.EventHandler(this.btbAsignarChofer_Click);
             // 
             // frmAbmVehiculos
             // 

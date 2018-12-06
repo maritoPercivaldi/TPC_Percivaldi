@@ -51,6 +51,50 @@ namespace negocio
             }
         }
 
+        public Vehiculos cargarData(string Chapa)
+        {
+            AccesoDatos conexion = null;
+            Vehiculos aux = null; 
+            try
+            {
+                conexion = new AccesoDatos();
+                conexion.setearConsulta("select IdAuto,Chapa,Marca,Modelo,CodigoMotor,CodigoChasis,FechaAlta,FechaBaja,Estado from VEHICULOS WHERE Chapa = @Chapa");
+                conexion.Comando.Parameters.Clear();
+                conexion.Comando.Parameters.AddWithValue("@Chapa",Chapa);
+                conexion.abrirConexion();
+                conexion.ejecutarConsulta();
+                while(conexion.Lector.Read())
+                {
+                    aux = new Vehiculos();
+                    aux.IdAuto = conexion.Lector.GetInt32(0);
+                    aux.Chapa = conexion.Lector.GetString(1);
+                    aux.Marca = conexion.Lector.GetString(2);
+                    aux.Modelo = conexion.Lector.GetString(3);
+                    aux.CodigoMotor = conexion.Lector.GetString(4);
+                    aux.CodigoChasis = conexion.Lector.GetString(5);
+                    aux.FechaAlta = conexion.Lector.GetDateTime(6);
+                    //aux.FechaBaja = conexion.Lector.GetDateTime(7);
+                    aux.Estado = conexion.Lector.GetInt32(8);
+                }
+                return aux;
+                
+                
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                if(conexion != null)
+                {
+                    conexion.cerrarConexion();
+                }
+            }
+            
+        }
+
         public int traerConductor(string Chapa)
         {
             AccesoDatos conexion = null;
