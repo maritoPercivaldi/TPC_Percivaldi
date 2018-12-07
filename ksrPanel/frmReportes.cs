@@ -19,6 +19,7 @@ namespace ksrPanel
     {
         private List<ConductorPorVehiculo> listaConductores;
         private List<KilometrosPorVehiculos> listaKM;
+        private List<MantePorVehiculos> listaMant;
 
         public frmReportes()
         {
@@ -36,6 +37,7 @@ namespace ksrPanel
         {
             cargarKm();
             cargarConductor();
+            cargarMantenimiento();
            
         }
 
@@ -52,6 +54,24 @@ namespace ksrPanel
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message,"Error!");
+            }
+
+        }
+
+        private void cargarMantenimiento()
+        {
+            MantPorVehiculoBusiness negocioMantenimiento = new MantPorVehiculoBusiness();
+            try
+            {
+                listaMant = (List<MantePorVehiculos>)negocioMantenimiento.listar();
+                dgvMantVehiculo.DataSource = listaMant;
+                dgvMantVehiculo.Columns[0].Visible = false;
+
+            }
+            catch (Exception ex)
+            {
+
                 MessageBox.Show(ex.Message,"Error!");
             }
 
@@ -114,6 +134,23 @@ namespace ksrPanel
             CR.Select();
             xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
 
+        }
+
+        private void btnExpoMante_Click(object sender, EventArgs e)
+        {
+            copyAlltoClipboard(dgvMantVehiculo);
+            Microsoft.Office.Interop.Excel.Application xlexcel;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+            object misValue = System.Reflection.Missing.Value;
+            xlexcel = new Excel.Application();
+            xlexcel.Visible = true;
+            xlWorkBook = xlexcel.Workbooks.Add(misValue);
+            xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+            Excel.Range CR = (Excel.Range)xlWorkSheet.Cells[1, 1];
+            CR.Select();
+            xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
+            
         }
     }
 }

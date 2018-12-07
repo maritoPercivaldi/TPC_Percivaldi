@@ -51,7 +51,7 @@ namespace ksrPanel
                 //si no es null significa que hay chofer asignado para la unidad.
                 MessageBox.Show(conductor.ConductorAsignado.Nombre +" "+ conductor.ConductorAsignado.Apellido, "Conductor Asignado");
                 dgvConductores.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-                dgvConductores.CurrentCell = dgvConductores[1,conductor.ConductorAsignado.Id -1];
+                //dgvConductores.CurrentCell = dgvConductores[1,conductor.ConductorAsignado.Nombre.ToString()];
                 TipoEjecucion = true; //existe conductor
             }
             else

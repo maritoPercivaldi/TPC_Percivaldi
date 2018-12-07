@@ -35,8 +35,12 @@
             this.lblReporteConductores = new System.Windows.Forms.Label();
             this.lblReporteKM = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.lblReporteMant = new System.Windows.Forms.Label();
+            this.dgvMantVehiculo = new System.Windows.Forms.DataGridView();
+            this.btnExpoMante = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConductoresReporte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKmReporte)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMantVehiculo)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvConductoresReporte
@@ -45,21 +49,21 @@
             this.dgvConductoresReporte.Location = new System.Drawing.Point(12, 140);
             this.dgvConductoresReporte.Name = "dgvConductoresReporte";
             this.dgvConductoresReporte.RowTemplate.Height = 28;
-            this.dgvConductoresReporte.Size = new System.Drawing.Size(674, 197);
+            this.dgvConductoresReporte.Size = new System.Drawing.Size(674, 141);
             this.dgvConductoresReporte.TabIndex = 1;
             // 
             // dgvKmReporte
             // 
             this.dgvKmReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKmReporte.Location = new System.Drawing.Point(12, 494);
+            this.dgvKmReporte.Location = new System.Drawing.Point(12, 393);
             this.dgvKmReporte.Name = "dgvKmReporte";
             this.dgvKmReporte.RowTemplate.Height = 28;
-            this.dgvKmReporte.Size = new System.Drawing.Size(674, 197);
+            this.dgvKmReporte.Size = new System.Drawing.Size(674, 146);
             this.dgvKmReporte.TabIndex = 2;
             // 
             // btnExportarConductor
             // 
-            this.btnExportarConductor.Location = new System.Drawing.Point(21, 343);
+            this.btnExportarConductor.Location = new System.Drawing.Point(21, 287);
             this.btnExportarConductor.Name = "btnExportarConductor";
             this.btnExportarConductor.Size = new System.Drawing.Size(104, 62);
             this.btnExportarConductor.TabIndex = 3;
@@ -69,7 +73,7 @@
             // 
             // btnExportarKM
             // 
-            this.btnExportarKM.Location = new System.Drawing.Point(21, 697);
+            this.btnExportarKM.Location = new System.Drawing.Point(21, 545);
             this.btnExportarKM.Name = "btnExportarKM";
             this.btnExportarKM.Size = new System.Drawing.Size(104, 61);
             this.btnExportarKM.TabIndex = 4;
@@ -89,7 +93,7 @@
             // lblReporteKM
             // 
             this.lblReporteKM.AutoSize = true;
-            this.lblReporteKM.Location = new System.Drawing.Point(8, 467);
+            this.lblReporteKM.Location = new System.Drawing.Point(8, 366);
             this.lblReporteKM.Name = "lblReporteKM";
             this.lblReporteKM.Size = new System.Drawing.Size(145, 24);
             this.lblReporteKM.TabIndex = 6;
@@ -105,11 +109,42 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // lblReporteMant
+            // 
+            this.lblReporteMant.AutoSize = true;
+            this.lblReporteMant.Location = new System.Drawing.Point(8, 627);
+            this.lblReporteMant.Name = "lblReporteMant";
+            this.lblReporteMant.Size = new System.Drawing.Size(250, 24);
+            this.lblReporteMant.TabIndex = 8;
+            this.lblReporteMant.Text = "Mantenimiento Por Vehiculo";
+            // 
+            // dgvMantVehiculo
+            // 
+            this.dgvMantVehiculo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMantVehiculo.Location = new System.Drawing.Point(12, 654);
+            this.dgvMantVehiculo.Name = "dgvMantVehiculo";
+            this.dgvMantVehiculo.RowTemplate.Height = 28;
+            this.dgvMantVehiculo.Size = new System.Drawing.Size(674, 146);
+            this.dgvMantVehiculo.TabIndex = 9;
+            // 
+            // btnExpoMante
+            // 
+            this.btnExpoMante.Location = new System.Drawing.Point(21, 806);
+            this.btnExpoMante.Name = "btnExpoMante";
+            this.btnExpoMante.Size = new System.Drawing.Size(104, 61);
+            this.btnExpoMante.TabIndex = 10;
+            this.btnExpoMante.Text = "Exportar a Excel";
+            this.btnExpoMante.UseVisualStyleBackColor = true;
+            this.btnExpoMante.Click += new System.EventHandler(this.btnExpoMante_Click);
+            // 
             // frmReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(998, 964);
+            this.Controls.Add(this.btnExpoMante);
+            this.Controls.Add(this.dgvMantVehiculo);
+            this.Controls.Add(this.lblReporteMant);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.lblReporteKM);
             this.Controls.Add(this.lblReporteConductores);
@@ -127,8 +162,12 @@
             this.Controls.SetChildIndex(this.lblReporteConductores, 0);
             this.Controls.SetChildIndex(this.lblReporteKM, 0);
             this.Controls.SetChildIndex(this.btnCerrar, 0);
+            this.Controls.SetChildIndex(this.lblReporteMant, 0);
+            this.Controls.SetChildIndex(this.dgvMantVehiculo, 0);
+            this.Controls.SetChildIndex(this.btnExpoMante, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgvConductoresReporte)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKmReporte)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMantVehiculo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,5 +182,8 @@
         private System.Windows.Forms.Label lblReporteConductores;
         private System.Windows.Forms.Label lblReporteKM;
         private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Label lblReporteMant;
+        private System.Windows.Forms.DataGridView dgvMantVehiculo;
+        private System.Windows.Forms.Button btnExpoMante;
     }
 }
