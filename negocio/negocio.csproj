@@ -45,6 +45,7 @@
     <Compile Include="ConductorPorVehiculoBusiness.cs" />
     <Compile Include="DepartamentoBusiness.cs" />
     <Compile Include="kmPorVehiculosBusiness.cs" />
+    <Compile Include="MantPorVehiculoBusiness.cs" />
     <Compile Include="Negocios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioBusiness.cs" />

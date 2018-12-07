@@ -32,6 +32,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.Office.Interop.Excel\15.0.0.0__71e9bce111e9429c\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -87,6 +92,12 @@
     <Compile Include="frmGestionKilometros.Designer.cs">
       <DependentUpon>frmGestionKilometros.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGestionMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionMantenimiento.Designer.cs">
+      <DependentUpon>frmGestionMantenimiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGestionVehiculo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +134,12 @@
     <Compile Include="FrmPruebas.Designer.cs">
       <DependentUpon>FrmPruebas.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportes.Designer.cs">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -146,6 +163,9 @@
     <EmbeddedResource Include="frmGestionKilometros.resx">
       <DependentUpon>frmGestionKilometros.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionMantenimiento.resx">
+      <DependentUpon>frmGestionMantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGestionVehiculo.resx">
       <DependentUpon>frmGestionVehiculo.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPruebas.resx">
       <DependentUpon>FrmPruebas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportes.resx">
+      <DependentUpon>frmReportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

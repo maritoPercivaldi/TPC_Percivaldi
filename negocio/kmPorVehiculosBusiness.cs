@@ -50,5 +50,44 @@ namespace negocio
             
             return ValidaOk;
         }
+
+        public List<KilometrosPorVehiculos> listar()
+        {
+            AccesoDatos conexion = null;
+            List<KilometrosPorVehiculos> lista = new List<KilometrosPorVehiculos>();
+            KilometrosPorVehiculos aux;
+            try
+            {
+                conexion = new AccesoDatos();
+                conexion.setearConsulta("select usu.APELLIDO,usu.NOMBRE,veh.Chapa,veh.Marca,veh.Modelo,regkm.KmRegistro,regkm.FechaRegistro from REGISTROKM as regkm inner join VEHICULOS as veh on regkm.IdVehiculo = veh.IdAuto inner join usuarios as usu on regkm.IdUsuarioReg = usu.ID");
+                conexion.abrirConexion();
+                conexion.ejecutarConsulta();
+                while(conexion.Lector.Read())
+                {
+                    aux = new KilometrosPorVehiculos();
+                    aux.UsuarioCarga.Apellido = conexion.Lector.GetString(0);
+                    aux.UsuarioCarga.Nombre = conexion.Lector.GetString(1);
+                    aux.VehiculoKM.Chapa = conexion.Lector.GetString(2);
+                    aux.VehiculoKM.Marca = conexion.Lector.GetString(3);
+                    aux.VehiculoKM.Modelo = conexion.Lector.GetString(4);
+                    aux.Kilometros = conexion.Lector.GetInt32(5);
+                    aux.FechaCarga = conexion.Lector.GetDateTime(6);
+                    lista.Add(aux);
+                }
+                return lista;
+            }
+            
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if(conexion != null)
+                {
+                    conexion.cerrarConexion();
+                }
+            }
+        }
     }
 }

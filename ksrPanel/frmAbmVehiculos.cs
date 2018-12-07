@@ -138,5 +138,15 @@ namespace ksrPanel
             cargar();
 
         }
+
+        private void btnCargaMant_Click(object sender, EventArgs e)
+        {
+            Vehiculos VehiculoARegistrarMant;
+            VehiculoARegistrarMant = (Vehiculos)dgvVehiculos.CurrentRow.DataBoundItem;
+            frmGestionMantenimiento cargaMantenimiento = new frmGestionMantenimiento(VehiculoARegistrarMant);
+            cargaMantenimiento.ShowDialog();
+            cargar();
+
+        }
     }
 }

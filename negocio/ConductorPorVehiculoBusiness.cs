@@ -20,12 +20,7 @@ namespace negocio
             try
             {
                 conexion = new AccesoDatos();
-                conexion.setearConsulta("select CON.ID, VEH.Chapa, USU.APELLIDO, USU.NOMBRE, CON.FECHAREGIN, USU.ID from CONDUCTORXVEHICULO AS CON" +
-                    "INNER JOIN VEHICULOS AS VEH" +
-                    "ON CON.IDVEHICULO = VEH.IdAuto" +
-                    "INNER JOIN USUARIOS AS USU" +
-                    "ON CON.IDUSUARIO = USU.ID" +
-                    "WHERE CON.ESTADO = 1");
+                conexion.setearConsulta("select CON.ID, VEH.Chapa, USU.APELLIDO, USU.NOMBRE, CON.FECHAREGIN, USU.ID from CONDUCTORXVEHICULO AS CON INNER JOIN VEHICULOS AS VEH ON CON.IDVEHICULO = VEH.IdAuto INNER JOIN USUARIOS AS USU ON CON.IDUSUARIO = USU.ID WHERE CON.ESTADO = 1");
                 conexion.abrirConexion();
                 conexion.ejecutarConsulta();
                 while(conexion.Lector.Read())

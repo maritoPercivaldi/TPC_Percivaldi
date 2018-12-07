@@ -44,3 +44,5 @@ C:\Users\Mario Percivaldi\Documents\Proyectos\TPC_Percivaldi\ksrPanel\obj\Debug\
 C:\Users\Mario Percivaldi\Documents\Proyectos\TPC_Percivaldi\ksrPanel\obj\Debug\ksrPanel.frmGestionKilometros.resources
 C:\Users\Mario Percivaldi\Documents\Proyectos\TPC_Percivaldi\ksrPanel\obj\Debug\ksrPanel.frmLogin.resources
 C:\Users\Mario Percivaldi\Documents\Proyectos\TPC_Percivaldi\ksrPanel\obj\Debug\ksrPanel.frmAsignarChofer.resources
+C:\Users\Mario Percivaldi\Documents\Proyectos\TPC_Percivaldi\ksrPanel\obj\Debug\ksrPanel.frmReportes.resources
+C:\Users\Mario Percivaldi\Documents\Proyectos\TPC_Percivaldi\ksrPanel\obj\Debug\ksrPanel.frmGestionMantenimiento.resources

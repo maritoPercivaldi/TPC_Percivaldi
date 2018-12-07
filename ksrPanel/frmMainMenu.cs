@@ -62,5 +62,11 @@ namespace ksrPanel
             MessageBox.Show("Gracias por usar la aplicacion", "Salida!");
             System.Windows.Forms.Application.Exit();
         }
+
+        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReportes form = new frmReportes();
+            form.ShowDialog();
+        }
     }
 }

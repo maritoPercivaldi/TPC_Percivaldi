@@ -34,6 +34,7 @@
             this.btnBajaVehiculo = new System.Windows.Forms.Button();
             this.btnRegistrarKM = new System.Windows.Forms.Button();
             this.btbAsignarChofer = new System.Windows.Forms.Button();
+            this.btnCargaMant = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             // 
             this.btnNuevoVehiculo.Location = new System.Drawing.Point(645, 94);
             this.btnNuevoVehiculo.Name = "btnNuevoVehiculo";
-            this.btnNuevoVehiculo.Size = new System.Drawing.Size(177, 47);
+            this.btnNuevoVehiculo.Size = new System.Drawing.Size(180, 40);
             this.btnNuevoVehiculo.TabIndex = 2;
             this.btnNuevoVehiculo.Text = "Nuevo Vehiculo";
             this.btnNuevoVehiculo.UseVisualStyleBackColor = true;
@@ -58,9 +59,9 @@
             // 
             // btnModificarVehiculo
             // 
-            this.btnModificarVehiculo.Location = new System.Drawing.Point(645, 147);
+            this.btnModificarVehiculo.Location = new System.Drawing.Point(645, 138);
             this.btnModificarVehiculo.Name = "btnModificarVehiculo";
-            this.btnModificarVehiculo.Size = new System.Drawing.Size(177, 46);
+            this.btnModificarVehiculo.Size = new System.Drawing.Size(180, 40);
             this.btnModificarVehiculo.TabIndex = 3;
             this.btnModificarVehiculo.Text = "Modificar Vehículo";
             this.btnModificarVehiculo.UseVisualStyleBackColor = true;
@@ -68,9 +69,9 @@
             // 
             // btnBajaVehiculo
             // 
-            this.btnBajaVehiculo.Location = new System.Drawing.Point(645, 199);
+            this.btnBajaVehiculo.Location = new System.Drawing.Point(645, 184);
             this.btnBajaVehiculo.Name = "btnBajaVehiculo";
-            this.btnBajaVehiculo.Size = new System.Drawing.Size(177, 46);
+            this.btnBajaVehiculo.Size = new System.Drawing.Size(180, 40);
             this.btnBajaVehiculo.TabIndex = 4;
             this.btnBajaVehiculo.Text = "Baja Vehículo";
             this.btnBajaVehiculo.UseVisualStyleBackColor = true;
@@ -78,9 +79,9 @@
             // 
             // btnRegistrarKM
             // 
-            this.btnRegistrarKM.Location = new System.Drawing.Point(645, 251);
+            this.btnRegistrarKM.Location = new System.Drawing.Point(645, 276);
             this.btnRegistrarKM.Name = "btnRegistrarKM";
-            this.btnRegistrarKM.Size = new System.Drawing.Size(177, 84);
+            this.btnRegistrarKM.Size = new System.Drawing.Size(180, 67);
             this.btnRegistrarKM.TabIndex = 5;
             this.btnRegistrarKM.Text = "Registrar Kilometros";
             this.btnRegistrarKM.UseVisualStyleBackColor = true;
@@ -88,19 +89,30 @@
             // 
             // btbAsignarChofer
             // 
-            this.btbAsignarChofer.Location = new System.Drawing.Point(645, 341);
+            this.btbAsignarChofer.Location = new System.Drawing.Point(645, 230);
             this.btbAsignarChofer.Name = "btbAsignarChofer";
-            this.btbAsignarChofer.Size = new System.Drawing.Size(177, 84);
+            this.btbAsignarChofer.Size = new System.Drawing.Size(180, 40);
             this.btbAsignarChofer.TabIndex = 6;
             this.btbAsignarChofer.Text = "Asignar Chofer";
             this.btbAsignarChofer.UseVisualStyleBackColor = true;
             this.btbAsignarChofer.Click += new System.EventHandler(this.btbAsignarChofer_Click);
+            // 
+            // btnCargaMant
+            // 
+            this.btnCargaMant.Location = new System.Drawing.Point(645, 349);
+            this.btnCargaMant.Name = "btnCargaMant";
+            this.btnCargaMant.Size = new System.Drawing.Size(180, 67);
+            this.btnCargaMant.TabIndex = 7;
+            this.btnCargaMant.Text = "Registrar Mantenimiento";
+            this.btnCargaMant.UseVisualStyleBackColor = true;
+            this.btnCargaMant.Click += new System.EventHandler(this.btnCargaMant_Click);
             // 
             // frmAbmVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1221, 1185);
+            this.Controls.Add(this.btnCargaMant);
             this.Controls.Add(this.btbAsignarChofer);
             this.Controls.Add(this.btnRegistrarKM);
             this.Controls.Add(this.btnBajaVehiculo);
@@ -116,6 +128,7 @@
             this.Controls.SetChildIndex(this.btnBajaVehiculo, 0);
             this.Controls.SetChildIndex(this.btnRegistrarKM, 0);
             this.Controls.SetChildIndex(this.btbAsignarChofer, 0);
+            this.Controls.SetChildIndex(this.btnCargaMant, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculos)).EndInit();
             this.ResumeLayout(false);
 
@@ -129,5 +142,6 @@
         private System.Windows.Forms.Button btnBajaVehiculo;
         private System.Windows.Forms.Button btnRegistrarKM;
         private System.Windows.Forms.Button btbAsignarChofer;
+        private System.Windows.Forms.Button btnCargaMant;
     }
 }
