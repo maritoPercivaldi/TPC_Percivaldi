@@ -33,7 +33,7 @@
             this.lblComboConductor = new System.Windows.Forms.Label();
             this.dgvConductores = new System.Windows.Forms.DataGridView();
             this.lblFechaAsingacion = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaAsignacion = new System.Windows.Forms.DateTimePicker();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConductores)).BeginInit();
@@ -84,12 +84,12 @@
             this.lblFechaAsingacion.TabIndex = 5;
             this.lblFechaAsingacion.Text = "Fecha de Asignacion";
             // 
-            // dateTimePicker1
+            // dtpFechaAsignacion
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(425, 124);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(348, 32);
-            this.dateTimePicker1.TabIndex = 6;
+            this.dtpFechaAsignacion.Location = new System.Drawing.Point(425, 124);
+            this.dtpFechaAsignacion.Name = "dtpFechaAsignacion";
+            this.dtpFechaAsignacion.Size = new System.Drawing.Size(348, 32);
+            this.dtpFechaAsignacion.TabIndex = 6;
             // 
             // btnOk
             // 
@@ -118,7 +118,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnOk);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpFechaAsignacion);
             this.Controls.Add(this.lblFechaAsingacion);
             this.Controls.Add(this.dgvConductores);
             this.Controls.Add(this.lblComboConductor);
@@ -132,7 +132,7 @@
             this.Controls.SetChildIndex(this.lblComboConductor, 0);
             this.Controls.SetChildIndex(this.dgvConductores, 0);
             this.Controls.SetChildIndex(this.lblFechaAsingacion, 0);
-            this.Controls.SetChildIndex(this.dateTimePicker1, 0);
+            this.Controls.SetChildIndex(this.dtpFechaAsignacion, 0);
             this.Controls.SetChildIndex(this.btnOk, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgvConductores)).EndInit();
@@ -148,7 +148,7 @@
         private System.Windows.Forms.Label lblComboConductor;
         private System.Windows.Forms.DataGridView dgvConductores;
         private System.Windows.Forms.Label lblFechaAsingacion;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFechaAsignacion;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnCancelar;
     }

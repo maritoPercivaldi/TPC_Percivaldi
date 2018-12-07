@@ -100,5 +100,63 @@ namespace negocio
 
         }
 
+        public void bajarConductor(ConductorPorVehiculo conductor)
+        {
+            AccesoDatos conexion = null;
+            try
+            {
+                conexion = new AccesoDatos();
+                conexion.setearConsulta("update CONDUCTORXVEHICULO set FECHAREGOUT = @dateout, ESTADO = @estado  where IDVEHICULO = @IDAUTO and IDUSUARIO = @IDUSER");
+                conexion.Comando.Parameters.Clear();
+                conexion.Comando.Parameters.AddWithValue("@dateout", conductor.FechaBajaAsignacion);
+                conexion.Comando.Parameters.AddWithValue("@IDAUTO", conductor.VehiculoAsignado.IdAuto);
+                conexion.Comando.Parameters.AddWithValue("@IDUSER", conductor.ConductorAsignado.Id);
+                conexion.Comando.Parameters.AddWithValue("@estado", conductor.EstadoAsignacion);
+                conexion.abrirConexion();
+                conexion.ejecutarConsulta();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                if(conexion != null)
+                {
+                    conexion.cerrarConexion();
+                }
+            }
+            
+        }
+
+        public void altaConductor(ConductorPorVehiculo conductor)
+        {
+            AccesoDatos conexion = null;
+            try
+            {
+                conexion = new AccesoDatos();
+                conexion.setearConsulta("INSERT INTO CONDUCTORXVEHICULO (IDVEHICULO,IDUSUARIO,FECHAREGIN,ESTADO) VALUES (@IdVehiculo,@IdUsuario,@FechaIn,1)");
+                conexion.Comando.Parameters.Clear();
+                conexion.Comando.Parameters.AddWithValue("@FechaIn", conductor.FechaAltaAsignacion.Date);
+                conexion.Comando.Parameters.AddWithValue("@IdVehiculo", conductor.VehiculoAsignado.IdAuto);
+                conexion.Comando.Parameters.AddWithValue("@IdUsuario", conductor.ConductorAsignado.Id);
+                conexion.abrirConexion();
+                conexion.ejecutarConsulta();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                if (conexion != null)
+                {
+                    conexion.cerrarConexion();
+                }
+            }
+
+        }
     }
 }

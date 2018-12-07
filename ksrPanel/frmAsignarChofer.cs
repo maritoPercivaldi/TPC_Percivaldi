@@ -93,16 +93,36 @@ namespace ksrPanel
          if(TipoEjecucion)
             {
                 //si es true, hay conductor entonces:
-                //primero:
+                //construir el conductor con los datos actuales. Ya tiene todo salvo la fecha de baja.
+                conductor.FechaBajaAsignacion = DateTime.Today;
+                conductor.EstadoAsignacion = 2;
                 //grabar la fecha de modificación y pasar a la baja el registro actual
+                negocio.bajarConductor(conductor);
                 //segundo:
+                //cargar la info nueva en el conductor.
+                conductor.ConductorAsignado = (clsUsuarios)dgvConductores.CurrentRow.DataBoundItem;
+                conductor.EstadoAsignacion = 1;
+                conductor.FechaAltaAsignacion = dtpFechaAsignacion.Value;
                 //grabar el registro con la nueva info
-
+                negocio.altaConductor(conductor);
+                MessageBox.Show("Registro Grabado!", "Asignación de Conductor!");
+                Close();
             }
          else
             {
+                conductor = new ConductorPorVehiculo();
                 //si es false, no hay conductor y es un alta nueva
                 //grabar el registro con la nueva info
+                //cargar la info nueva en el conductor.
+                conductor.VehiculoAsignado = autoRecibido;
+                conductor.ConductorAsignado = (clsUsuarios)dgvConductores.CurrentRow.DataBoundItem;
+                conductor.EstadoAsignacion = 1;
+                conductor.FechaAltaAsignacion = dtpFechaAsignacion.Value;
+                //grabar el registro con la nueva info
+                negocio.altaConductor(conductor);
+                MessageBox.Show("Registro Grabado!", "Asignación de Conductor!");
+                Close();
+
             }
 
         }
